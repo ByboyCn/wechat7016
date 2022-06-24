@@ -1,0 +1,3837 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeChat.Api</name>
+    </assembly>
+    <members>
+        <member name="T:WeChat.Api.Controllers.AuthController">
+            <summary>
+            授权操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXScanAndAuthLoginQrcode(WeChat.Api.Models.Auth.ScanQrcodeDto)">
+            <summary>
+            扫描并授权第三方登陆(二维码链接格式：https://open.weixin.qq.com/connect/confirm?uuid=xxxxx）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXGetA8Key(WeChat.Api.Models.Auth.URLDto)">
+            <summary>
+            获取url访问授权pass_ticket
+            可实现扫码入群 自动加群 公众号阅读Key的获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXGetMpA8Key(WeChat.Api.Models.Auth.URLDto)">
+            <summary>
+            获取url授权
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXJSLogin(WeChat.Api.Models.Auth.JSDto)">
+            <summary>
+            小程序授权，获取code
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXJSOperateWxData(WeChat.Api.Models.Auth.JSDto)">
+            <summary>
+            获取小程序授权信息（encryptedData,iv等）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXOAuthAuthorize(WeChat.Api.Models.Auth.URLDto)">
+            <summary>
+            OAuth授权（公众号授权）
+            格式：<![CDATA[https://open.weixin.qq.com/connect/oauth2/authorize?appid=xx&redirect_uri=xx&response_type=code&scope=snsapi_userinfo&connect_redirect=1#wechat_redirect]]>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.AuthController.WXSdkOAuthAuthorizeConfirm(WeChat.Api.Models.Auth.SdkOAuthAuthorizeConfirmDto)">
+            <summary>
+            APP授权登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.BaseController">
+            <summary>
+            微信控制器基类
+            </summary>
+        </member>
+        <member name="F:WeChat.Api.Controllers.BaseController._Cache">
+            <summary>
+            缓存
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.UpdateClient(System.String,WeChat.Core.IWXApp)">
+            <summary>
+            更新微信实例
+            </summary>
+            <param name="guid"></param>
+            <param name="client"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.GetClient(System.String)">
+            <summary>
+            获取微信实例
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.CreateClient(WeChat.Api.Models.Base.CreateDto,System.String,WeChat.Core.WXEnvironment,System.Action{WeChat.Core.IWXApp,WeChat.Api.Models.RestfulData{WeChat.Api.Models.BaseDto}})">
+            <summary>
+            创建全新微信实例
+            </summary>
+            <param name="dto"></param>
+            <param name="guid"></param>
+            <param name="environment">环境信息</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.CreateClient(WeChat.Api.Models.Base.RecoveryDto,WeChat.Core.WXSerialization,System.Action{WeChat.Core.IWXApp,WeChat.Api.Models.RestfulData{WeChat.Api.Models.BaseDto}})">
+            <summary>
+            创建序列微信实例
+            </summary>
+            <param name="dto"></param>
+            <param name="serialization">客户端序列化信息</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.CreateClient(WeChat.Core.WXEnvironment,System.String,System.Func{WeChat.Core.IWXApp,WeChat.Api.Models.RestfulData{System.Object},System.Threading.Tasks.Task})">
+            <summary>
+            创建临时微信实例
+            </summary>
+            <param name="environment">环境</param>
+            <param name="proxy">代理IP</param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.ReleaseClient``1(WeChat.Api.Models.BaseDto,System.Action{WeChat.Api.Models.RestfulData{``0}})">
+            <summary>
+            释放微信实例
+            </summary>
+            <param name="dto"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BaseController.Business``1(WeChat.Api.Models.BaseDto,System.Func{WeChat.Core.IWXApp,WeChat.Api.Models.RestfulData{``0},System.Threading.Tasks.Task})">
+            <summary>
+            请求业务
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dto"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.BizController">
+            <summary>
+            公众号操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.WXSearchBiz(WeChat.Api.Models.Biz.BaseBizDto)">
+            <summary>
+            搜索公众号
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.WXForkBizAccount(WeChat.Api.Models.Biz.BaseBizDto)">
+            <summary>
+            关注公众号
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.WXClickBizMenu(WeChat.Api.Models.Biz.ClickCommandDto)">
+            <summary>
+            操作公众号菜单
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.WXReadBizArticle(WeChat.Api.Models.Biz.BizUrlDto)">
+            <summary>
+            阅读公众号文章（链接格式：https://mp.weixin.qq.com/s/xxxxx）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.BizController.WXLikeBizArticle(WeChat.Api.Models.Biz.BizUrlDto)">
+            <summary>
+            点赞公众号文章（链接格式：https://mp.weixin.qq.com/s/xxxxx）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.ChatroomController">
+            <summary>
+            群聊操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomPage(WeChat.Api.Models.Chatroom.InitContactDto)">
+            <summary>
+            分页获取通讯录群聊（详情）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomAll(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取全部通讯录群聊（ID）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXScanChatroomQrcode(WeChat.Api.Models.Chatroom.ScanQrcodeDto)">
+            <summary>
+            扫码进群（二维码链接格式：https://weixin.qq.com/g/xxxxx）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomQrcode(WeChat.Api.Models.Chatroom.ChatroomDto)">
+            <summary>
+            获取群二维码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXCreateChatroom(WeChat.Api.Models.Chatroom.CreateChatroomDto)">
+            <summary>
+            创建群聊
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXCreateFaceChatroom(WeChat.Api.Models.Chatroom.CreateFaceChatroomDto)">
+            <summary>
+            面对面创群
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXQuitChatroom(WeChat.Api.Models.Chatroom.ChatroomDto)">
+            <summary>
+            退出群聊
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXSetChatroomName(WeChat.Api.Models.Chatroom.SetChatroomNameDto)">
+            <summary>
+            设置群名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXSetChatroomNameDisplyName(WeChat.Api.Models.Chatroom.SetChatroomNameDto)">
+            <summary>
+            设置我在本群昵称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXShowChatroomMemberDisplyName(WeChat.Api.Models.Chatroom.OpLogChatroomDto)">
+            <summary>
+            显示群成员昵称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXSaveChatroomToContact(WeChat.Api.Models.Chatroom.OpLogChatroomDto)">
+            <summary>
+            保存到通讯录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXTransferChatroomOwner(WeChat.Api.Models.Chatroom.TransferChatroomOwnerDto)">
+            <summary>
+            转让群主
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomAnnouncement(WeChat.Api.Models.Chatroom.ChatroomDto)">
+            <summary>
+            获取群公告
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXInviteChatroomMember(WeChat.Api.Models.Chatroom.ChatroomMemberDto)">
+            <summary>
+            邀请群成员(40人以上)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXAddChatroomMember(WeChat.Api.Models.Chatroom.ChatroomMemberDto)">
+            <summary>
+            添加群成员（40人以内）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXDelChatroomMember(WeChat.Api.Models.Chatroom.ChatroomMemberDto)">
+            <summary>
+            删除群成员
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXAddChatroomAdmin(WeChat.Api.Models.Chatroom.ChatroomMemberDto)">
+            <summary>
+            添加群管理员
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXDelChatroomAdmin(WeChat.Api.Models.Chatroom.ChatroomMemberDto)">
+            <summary>
+            删除群管理员
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomMemberDetail(WeChat.Api.Models.Chatroom.ChatroomDto)">
+            <summary>
+            获取群成员详情
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXGetChatroomInfoDetail(WeChat.Api.Models.Chatroom.ChatroomsDto)">
+            <summary>
+            获取群信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXSetChatroomAnnouncement(WeChat.Api.Models.Chatroom.SetChatroomAnnouncementDto)">
+            <summary>
+            设置群公告
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ChatroomController.WXSetChatroomAccessVerify(WeChat.Api.Models.Chatroom.SetChatroomAccessVerifyDto)">
+            <summary>
+            设置群聊邀请验证
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.ClientController">
+            <summary>
+            微信实例操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXCreate(WeChat.Api.Models.Base.CreateDto)">
+            <summary>
+            创建微信实例（A16登录/62登录/扫码登录）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXTryCreate(WeChat.Api.Models.Base.TryCreateDto)">
+            <summary>
+            尝试创建微信实例（A16登录/62登录/扫码登录）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXRecovery(WeChat.Api.Models.Base.RecoveryDto)">
+            <summary>
+            恢复微信实例
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXRelease(WeChat.Api.Models.BaseDto)">
+            <summary>
+            释放微信实例
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXSerialization(WeChat.Api.Models.BaseDto)">
+            <summary>
+            序列化微信实例
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXSetProxy(WeChat.Api.Models.Base.SetProxyDto)">
+            <summary>
+            设置/修改实例代理
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ClientController.WXGetWechatData(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取微信实例数据（A16/62数据）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.ContactController">
+            <summary>
+            联系人操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXVerifyUser(WeChat.Api.Models.Contact.VerifyUserDto)">
+            <summary>
+            好友验证(打招呼/添加好友/拒绝添加好友)
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXBatchVerifyUser(WeChat.Api.Models.Contact.BatchVerifyUserDto)">
+            <summary>
+            批量好友验证（接口版）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXInitContactPage(WeChat.Api.Models.Contact.InitContactDto)">
+            <summary>
+            分页获取通讯录好友（精准获取）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXInitContactAll(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取全部通讯录好友（精准获取）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXDeleteContact(WeChat.Api.Models.Contact.ContactDto)">
+            <summary>
+            删除联系人
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXBatchDeleteContact(WeChat.Api.Models.Contact.GetContactDto)">
+            <summary>
+            批量删除联系人
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXSetContactFlag(WeChat.Api.Models.Contact.SetContactFlagDto)">
+            <summary>
+            设置联系人标志
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXSetContactRemark(WeChat.Api.Models.Contact.SetContactRemarkDto)">
+            <summary>
+            设置用户备注
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXSetContactLabel(WeChat.Api.Models.Contact.SetContactLabelDto)">
+            <summary>
+            设置用户标签
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXBatchGetContactProfile(WeChat.Api.Models.Contact.BatchGetContactDto)">
+            <summary>
+            批量获取好友简介
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXBatchGetContactHeadImage(WeChat.Api.Models.Contact.BatchGetContactDto)">
+            <summary>
+            批量获取好友头像
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXSearchContact(WeChat.Api.Models.Contact.ContactDto)">
+            <summary>
+            搜索联系人
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXGetInviteFriend(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取邀请朋友
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXGetContact(WeChat.Api.Models.Contact.GetContactDto)">
+            <summary>
+            获取联系人详情
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXGetContactStatus(WeChat.Api.Models.Contact.GetContactDto)">
+            <summary>
+            获取联系人状态[僵尸粉](单向好友/被拉黑/被封号)
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXUploadMContact(WeChat.Api.Models.Contact.UploadMContactDto)">
+            <summary>
+            上传通讯录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ContactController.WXGetMFriend(WeChat.Api.Models.Contact.GetMFriendDto)">
+            <summary>
+            获取手机朋友列表
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.ExtensionController">
+            <summary>
+            扩展功能
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ExtensionController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ExtensionController.WXBindOpMobileForReg(WeChat.Api.Models.Extension.BindOpMobileForRegDto)">
+            <summary>
+            短信操作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ExtensionController.WXOpLog(WeChat.Api.Models.Extension.OpLogDto)">
+            <summary>
+            好友(群聊)操作请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.ExtensionController.WXTenPay(WeChat.Api.Models.Extension.TenPayDto)">
+            <summary>
+            腾讯支付
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.FavorController">
+            <summary>
+            收藏操作
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Controllers.FavorController.Configuration">
+            <summary>
+            配置器
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+            <param name="configuration">配置器</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXGetOriginalFav(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取最早收藏
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXFavSync(WeChat.Api.Models.Favor.FavSyncDto)">
+            <summary>
+            同步收藏夹
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXAddFavItem(WeChat.Api.Models.Favor.AddFavItemDto)">
+            <summary>
+            添加收藏
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXFavInit(System.String)">
+            <summary>
+            收藏夹初始化
+            </summary>
+            <param name="wxid">wxid</param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXBatchGetFavItem(WeChat.Api.Models.Favor.BatchFavItemDto)">
+            <summary>
+            获取收藏夹信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.FavorController.WXDelFavItem(WeChat.Api.Models.Favor.BatchFavItemDto)">
+            <summary>
+            删除收藏夹信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.HeartbeatController">
+            <summary>
+            心跳操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.HeartbeatController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.HeartbeatController.WXHeartBeat(WeChat.Api.Models.BaseDto)">
+            <summary>
+            心跳
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.HeartbeatController.WXReportClientCheck(WeChat.Api.Models.BaseDto)">
+            <summary>
+            上报客户端校验（扫码登陆后 1-2 分钟上报一次）
+            23XML
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.HeartbeatController.WXSecReportClientCheck(WeChat.Api.Models.BaseDto)">
+            <summary>
+            安全上报客户端校验（扫码登陆后 1-2 分钟上报一次）
+            24PB
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.LabelController">
+            <summary>
+            标签操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LabelController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LabelController.WXGetContactLabelList(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取标签列表
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LabelController.WXAddContactLabel(WeChat.Api.Models.Label.AddContactLabelDto)">
+            <summary>
+            添加标签
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LabelController.WXModifyContactLabelList(WeChat.Api.Models.Label.ModifyContactLabelListDto)">
+            <summary>
+            修改标签列表
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LabelController.WXDelContactLabel(WeChat.Api.Models.Label.DelContactLabelDto)">
+            <summary>
+            删除标签
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.LoginController">
+            <summary>
+            登录操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXGetLoginQrcode(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取登录二维码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXCheckLoginQrcode(WeChat.Api.Models.Login.CheckLoginQrcodeDto)">
+            <summary>
+            获取登录二维码状态
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXTwiceLoginQrcode(WeChat.Api.Models.BaseDto)">
+            <summary>
+            扫码二次登录（唤醒登录）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXGetLoginVerifyCode(WeChat.Api.Models.Login.GetVerifyCodeDto)">
+            <summary>
+            获取登录验证码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXCheckLoginVerifyCode(WeChat.Api.Models.Login.CheckVerifyCodeDto)">
+            <summary>
+            效验登录验证码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXLoginManual(WeChat.Api.Models.Login.LoginDto)">
+            <summary>
+            人工登录（23XML）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXLoginAuto(WeChat.Api.Models.BaseDto)">
+            <summary>
+            自动登录/二次登录（23XML）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXSecLoginManual(WeChat.Api.Models.Login.LoginDto)">
+            <summary>
+            人工安全登录（24PB）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXSecLoginAuto(WeChat.Api.Models.BaseDto)">
+            <summary>
+            安全自动登录/二次登录（24PB）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXNewInit(WeChat.Api.Models.BaseDto)">
+            <summary>
+            新设备登录成功初始化
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXLogout(WeChat.Api.Models.BaseDto)">
+            <summary>
+            注销登录
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXGetLoginToken(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取登录令牌（用于自动登录或扫码二次登录）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXExtDeviceLoginConfirmGet(WeChat.Api.Models.Login.URLDto)">
+            <summary>
+            外部设备登陆扫码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXExtDeviceLoginConfirmOK(WeChat.Api.Models.Login.URLDto)">
+            <summary>
+            外部设备登陆确认
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXHelpDeviceLogin(WeChat.Api.Models.Login.URLDto)">
+            <summary>
+            辅助登录新设备,格式：https://login.weixin.qq.com/q/xxxxx
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.LoginController.WXExtractData(WeChat.Api.Models.Login.DataDto)">
+            <summary>
+            重提数据A16/62
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.MessageController">
+            <summary>
+            消息操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSyncMsg(WeChat.Api.Models.BaseDto)">
+            <summary>
+            同步消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendMsg(WeChat.Api.Models.Message.SendMsgDto)">
+            <summary>
+            发送文本消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendEmojiMsg(WeChat.Api.Models.Message.SendEmojiMsgDto)">
+            <summary>
+            发送Emoji消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendImage(WeChat.Api.Models.Message.SendImageDto)">
+            <summary>
+            发送图片消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendVoice(WeChat.Api.Models.Message.SendVoiceDto)">
+            <summary>
+            发送语音消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendVideo(WeChat.Api.Models.Message.SendVideoDto)">
+            <summary>
+            发送视频消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendImageByCDN(WeChat.Api.Models.Message.SendImageByCDNDto)">
+            <summary>
+            发送CDN图片消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendHDImageByCDN(WeChat.Api.Models.Message.SendHDImageByCDNDto)">
+            <summary>
+            发送CDN高清图片消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendVideoByCDN(WeChat.Api.Models.Message.SendVideoByCDNDto)">
+            <summary>
+            发送CDN视频消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXCheckCdnSource(WeChat.Api.Models.Cdn.CheckCdnSourceDto)">
+            <summary>
+            校验CDN资源
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendAppMsg(WeChat.Api.Models.Message.SendAppMsgDto)">
+            <summary>
+            发送APP消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendMsgFile(WeChat.Api.Models.Message.SendMsgFileDto)">
+            <summary>
+            发送文件消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXUploadMsgFile(WeChat.Api.Models.Message.UploadMsgFileDto)">
+            <summary>
+            上传消息文件
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXDownloadMsgFile(WeChat.Api.Models.Message.DownloadMsgFileDto)">
+            <summary>
+            下载消息文件
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXCheckFileDownload(WeChat.Api.Models.Message.CheckFileDownloadDto)">
+            <summary>
+            校验文件下载
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXMassMsgText(WeChat.Api.Models.Message.MassMsgTextDto)">
+            <summary>
+            群发文本消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXMassMsgImage(WeChat.Api.Models.Message.MassMsgImageDto)">
+            <summary>
+            群发图片消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXMassMsgVideo(WeChat.Api.Models.Message.MassMsgVideoDto)">
+            <summary>
+            群发视频消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXMassMsgVoice(WeChat.Api.Models.Message.MassMsgVoiceDto)">
+            <summary>
+            群发语音消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXGetMsgVideo(WeChat.Api.Models.Message.GetMsgMediaDto)">
+            <summary>
+            获取消息视频（支持大视频）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXGetMsgVoice(WeChat.Api.Models.Message.GetMsgVoiceDto)">
+            <summary>
+            获取消息语音（支持长语音）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXGetMsgImage(WeChat.Api.Models.Message.GetMsgImageDto)">
+            <summary>
+            获取消息图片（支持高清大图）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXRevokeMsg(WeChat.Api.Models.Message.RevokeMsgDto)">
+            <summary>
+            撤回消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXMsgStatusNotify(WeChat.Api.Models.Message.MsgStatusNotifyDto)">
+            <summary>
+            消息状态通知
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXSendShare(WeChat.Api.Models.Message.SendShareDto)">
+            <summary>
+            发送分享消息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXShareCard(WeChat.Api.Models.Message.ShareCardDto)">
+            <summary>
+            分享名片
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXShareLocation(WeChat.Api.Models.Message.ShareLocationDto)">
+            <summary>
+            分享位置
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.MessageController.WXShareFav(WeChat.Api.Models.Message.ShareFavDto)">
+            <summary>
+            分享收藏
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.OtherController">
+            <summary>
+            其它操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXShakeReport(WeChat.Api.Models.Other.LocationDto)">
+            <summary>
+            摇一摇获取内容
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXShakeGet(WeChat.Api.Models.Other.ShakeGetDto)">
+            <summary>
+            摇一摇获取结果
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXGetPeopleNearby(WeChat.Api.Models.Other.LocationDto)">
+            <summary>
+            查看附近人
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXSearchHardDevice(WeChat.Api.Models.Other.SearchHardDeviceDto)">
+            <summary>
+            搜索硬件设备
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXUploadDeviceStep(WeChat.Api.Models.Other.UploadDeviceStepDto)">
+            <summary>
+            上传设备步数
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.OtherController.WXaddv3(WeChat.Api.Models.Contact.ContactDto)">
+            <summary>
+            添加V3
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.PaymentController">
+            <summary>
+            支付操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXBindQuery(WeChat.Api.Models.BaseDto)">
+            <summary>
+            查询绑定的银行卡信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXF2FQrcode(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取收款二维码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXTransferSetF2FFee(WeChat.Api.Models.Payment.TransferSetF2FFeeDto)">
+            <summary>
+            获取自定义金额收款码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXCreatePreTransfer(WeChat.Api.Models.Payment.CreatePreTransferDto)">
+            <summary>
+            创建转账
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXConfirmPreTransfer(WeChat.Api.Models.Payment.ConfirmPreTransferDto)">
+            <summary>
+            确认转账
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXTransferQuery(WeChat.Api.Models.Payment.TransferOperateDto)">
+            <summary>
+            查询收款状态
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXTransferConfirm(WeChat.Api.Models.Payment.TransferOperateDto)">
+            <summary>
+            确认收款
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXCreateRedPacket(WeChat.Api.Models.Payment.CreateRedPacketDto)">
+            <summary>
+            创建红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXReceiveRedPacket(WeChat.Api.Models.Payment.ReceiveRedPacketDto)">
+            <summary>
+            接收红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXOpenRedPacket(WeChat.Api.Models.Payment.OpenRedPacketDto)">
+            <summary>
+            打开红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXeceiveunionhbRedPacket(WeChat.Api.Models.Payment.ReceiveRedPacketDto)">
+            <summary>
+            接收企业红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXOpenunionhbRedPacket(WeChat.Api.Models.Payment.OpenRedPacketDto)">
+            <summary>
+            打开企业红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXQueryRedPacket(WeChat.Api.Models.Payment.QueryRedPacketDto)">
+            <summary>
+            查询红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.PaymentController.WXQrydetailunionhbRedPacket(WeChat.Api.Models.Payment.QueryRedPacketDto)">
+            <summary>
+            查询企业红包
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.RegisterController">
+            <summary>
+            注册操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.RegisterController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.RegisterController.WXSlideRegisterVerifyCode(WeChat.Api.Models.Register.BaseVerifyCodeDto)">
+            <summary>
+            获取注册滑块
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.RegisterController.WXGetRegisterVerifyCode(WeChat.Api.Models.Register.GetRegisterCodeDto)">
+            <summary>
+            获取注册验证码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.RegisterController.WXCheckRegisterVerifyCode(WeChat.Api.Models.Register.CheckRegisterCodeDto)">
+            <summary>
+            效验注册验证码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.RegisterController.WXRegister(WeChat.Api.Models.Register.RegisterDto)">
+            <summary>
+            注册账号
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.SnsController">
+            <summary>
+            朋友圈操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsSwitch(WeChat.Api.Models.Sns.SnsSwitchDto)">
+            <summary>
+            设置朋友圈权限
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXGetOriginalSns(WeChat.Api.Models.Sns.SnsOriginalDto)">
+            <summary>
+            获取指定人最早朋友圈
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsSync(WeChat.Api.Models.BaseDto)">
+            <summary>
+            同步朋友圈
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsTimeLine(WeChat.Api.Models.Sns.SnsTimeLineDto)">
+            <summary>
+            获取朋友圈动态
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsUserPage(WeChat.Api.Models.Sns.SnsUserPageDto)">
+            <summary>
+            获取指定好友朋友圈动态
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsPost(WeChat.Api.Models.Sns.SnsPostDto)">
+            <summary>
+            发朋友圈
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsObjectOperate(WeChat.Api.Models.Sns.SnsObjectOperateDto)">
+            <summary>
+            朋友圈操作（删圈/隐私/公开/删评/取赞）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsObjectDetail(WeChat.Api.Models.Sns.SnsObjectDetailDto)">
+            <summary>
+            获取朋友圈动态详情
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsUpload(WeChat.Api.Models.Sns.SnsUploadDto)">
+            <summary>
+            朋友圈上传图片
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.SnsController.WXSnsComment(WeChat.Api.Models.Sns.SnsCommentDto)">
+            <summary>
+            朋友圈消息回复（点赞/文本/消息/with/陌生人点赞）
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.TokenController">
+            <summary>
+            Token令牌操作
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Controllers.TokenController.Configuration">
+            <summary>
+            配置器
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.TokenController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration">配置器</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.TokenController.Create(System.String,System.Int32)">
+            <summary>
+            创建Token令牌
+            </summary>
+            <param name="password">创建指令(在appsettings.json配置)</param>
+            <param name="minutes">token有效期(默认30分钟)</param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.UnBanController">
+            <summary>
+            封号操作
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Controllers.UnBanController.Configuration">
+            <summary>
+            配置器
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UnBanController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+            <param name="configuration">配置器</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UnBanController.WXUnBanTempLogin(WeChat.Api.Models.UnBan.TempLoginDto)">
+            <summary>
+            封号开启临时登录/强开
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Controllers.UserController">
+            <summary>
+            用户操作
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.#ctor(Microsoft.Extensions.Caching.Distributed.IDistributedCache)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cache">缓存</param>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXUploadHeadImage(WeChat.Api.Models.User.UploadHeadImageDto)">
+            <summary>
+            上传头像
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXGetProfile(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取账号详情
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXSetUserInfo(WeChat.Api.Models.User.SetUserInfoDto)">
+            <summary>
+            设置用户信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXSetAlisa(WeChat.Api.Models.User.SetAlisaDto)">
+            <summary>
+            设置微信号
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXGetUserQrcode(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取个人二维码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXVerifyPassword(WeChat.Api.Models.User.VerifyPasswordDto)">
+            <summary>
+            验证密码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXSetPassword(WeChat.Api.Models.User.SetPasswordDto)">
+            <summary>
+            设置密码(需要先验证密码)
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXOnceSetPassword(WeChat.Api.Models.User.OncePasswordDto)">
+            <summary>
+            一键修改密码
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXBindMobile(WeChat.Api.Models.User.BindMobileDto)">
+            <summary>
+            绑定/解绑手机号
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXBindEmail(WeChat.Api.Models.User.BindEmailDto)">
+            <summary>
+            绑定/解绑邮箱
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXGetSafetyInfo(WeChat.Api.Models.BaseDto)">
+            <summary>
+            获取安全设备信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXDelSafeDevice(WeChat.Api.Models.User.DelSafeDeviceDto)">
+            <summary>
+            删除安全设备
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXUpdateSafeDevice(WeChat.Api.Models.BaseDto)">
+            <summary>
+            修改安全设备信息
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXFunctionSwitch(WeChat.Api.Models.User.FunctionSwitchDto)">
+            <summary>
+            好友验证功能切换
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WeChat.Api.Controllers.UserController.WXVerifyPersonalInfo(WeChat.Api.Models.User.VerifyPersonalInfoDto)">
+            <summary>
+            验证个人信息(身份证)
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Extensions.GlobalExceptionFilter">
+            <summary>
+            全局异常拦截器
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Extensions.GlobalExceptionFilter.#ctor(Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Logging.ILogger{WeChat.Api.Extensions.GlobalExceptionFilter})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="_env"></param>
+            <param name="_logger"></param>
+        </member>
+        <member name="M:WeChat.Api.Extensions.GlobalExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            接口实现
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:WeChat.Api.ClassDescriptions">
+            <summary>
+            控制注释
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.ClassDescriptions.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            接口实现
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.ApiGroupSortAttribute">
+            <summary>
+            接口组排序标记
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.ApiGroupSortAttribute.Sort">
+            <summary>
+            序号
+            越大越靠前
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.ApiGroupSortAttribute.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="sort"></param>
+        </member>
+        <member name="T:WeChat.Api.ApiGroupSortFilter">
+            <summary>
+            接口组排序标记
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.ApiGroupSortFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            接口实现
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.HiddenApiAttribute">
+            <summary>
+            隐藏接口标记
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.HiddenApiFilter">
+            <summary>
+            隐藏接口标记
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.HiddenApiFilter.Apply(Microsoft.OpenApi.Models.OpenApiDocument,Swashbuckle.AspNetCore.SwaggerGen.DocumentFilterContext)">
+            <summary>
+            接口实现
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Auth.JSDto">
+            <summary>
+            JS Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.JSDto.AppId">
+            <summary>
+            小程序Appid
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Auth.ScanQrcodeDto">
+            <summary>
+            扫描二维码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.ScanQrcodeDto.Url">
+            <summary>
+            二维码链接
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Auth.SdkOAuthAuthorizeConfirmDto">
+            <summary>
+            APP授权登录Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.SdkOAuthAuthorizeConfirmDto.AppId">
+            <summary>
+            应用Appid
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.SdkOAuthAuthorizeConfirmDto.AppName">
+            <summary>
+            应用名称
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.SdkOAuthAuthorizeConfirmDto.AppNamePack">
+            <summary>
+            应用包名
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Auth.URLDto">
+            <summary>
+            URL Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Auth.URLDto.Url">
+            <summary>
+            Url链接
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.BaseDto">
+            <summary>
+            基本DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.BaseDto.Guid">
+            <summary>
+            微信实例唯一ID
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Base.TryCreateDto">
+            <summary>
+            尝试创建实例
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.TryCreateDto.Guid">
+            <summary>
+            微信实例唯一ID
+            如果存在则恢复目标实例，不存在则创建
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.TryCreateDto.Terminal">
+            <summary>
+            终端（0：安卓，1：IPAD，2：扫码）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.TryCreateDto.WxData">
+            <summary>
+            微信数据（A16/62）
+                扫码登录或不读62时请留空
+                数据请对应终端类型填写
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.TryCreateDto.Proxy">
+            <summary>
+            代理IP(不使用可删除)
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Base.CreateDto">
+            <summary>
+            创建DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Terminal">
+            <summary>
+            终端（0：安卓，1：IPAD，2：扫码）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.WxData">
+            <summary>
+            微信数据（A16/62）
+                扫码登录或不读62时请留空
+                数据请对应终端类型填写
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Proxy">
+            <summary>
+            代理IP(不使用可删除)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Brand">
+            <summary>
+            设备品牌(不使用可删除)
+                非安卓设备品牌只能为Apple
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Name">
+            <summary>
+            设备名称(不使用可删除)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Imei">
+            <summary>
+            设备IMEI(不使用可删除)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.CreateDto.Mac">
+            <summary>
+            设备MAC地址(不使用可删除)
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Base.RecoveryDto">
+            <summary>
+            恢复DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.RecoveryDto.Serialization">
+            <summary>
+            序列化信息
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Base.SetProxyDto">
+            <summary>
+            设置代理DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.SetProxyDto.Enable">
+            <summary>
+            开关
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.SetProxyDto.Address">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.SetProxyDto.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.SetProxyDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Base.SetProxyDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Biz.BaseBizDto">
+            <summary>
+            公众号基础DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Biz.BaseBizDto.BizUserName">
+            <summary>
+            公众号名称
+            例如"weixin"
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Biz.BizUrlDto">
+            <summary>
+            公众号基础DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Biz.BizUrlDto.Url">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Biz.ClickCommandDto">
+            <summary>
+            操作公众号菜单DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Biz.ClickCommandDto.MenuID">
+            <summary>
+            菜单ID
+            例如"2672637330"
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Biz.ClickCommandDto.MenuKey">
+            <summary>
+            菜单Key
+            例如"rselfmenu_2_0"
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Cdn.CheckCdnSourceDto">
+            <summary>
+            校验CDN资源DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.data_source_type">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.data_source_id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.dataid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.fullmd5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.head256md5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.fullsize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Cdn.CheckCdnSourceDto.isthumb">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.ChatroomDto">
+            <summary>
+            群DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.ChatroomDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.ChatroomsDto">
+            <summary>
+            群DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.ChatroomsDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.ChatroomMemberDto">
+            <summary>
+            群及成员DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.ChatroomMemberDto.Users">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.ChatroomMemberDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.CreateChatroomDto">
+            <summary>
+            创建群聊DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.CreateChatroomDto.Users">
+            <summary>
+            用户列表，至少三人，且第一个人为自己
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.CreateChatroomDto.NickName">
+            <summary>
+            群昵称
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.CreateFaceChatroomDto">
+            <summary>
+            面对面创群DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.CreateFaceChatroomDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.CreateFaceChatroomDto.Latitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.CreateFaceChatroomDto.Longitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.InitContactDto">
+            <summary>
+             初始化通讯录DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.InitContactDto.CurrentChatroomContactSeq">
+            <summary>
+            当前群聊联系人请求号,第一次为0
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.InitContactDto.IsDetail">
+            <summary>
+            是否获取详情
+            建议群少时使用
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.OpLogChatroomDto">
+            <summary>
+            群操作DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.OpLogChatroomDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.OpLogChatroomDto.Value">
+            <summary>
+            开关
+            1开/2关
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.ScanQrcodeDto">
+            <summary>
+            扫描二维码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.ScanQrcodeDto.Url">
+            <summary>
+            二维码链接
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.SetChatroomAccessVerifyDto">
+            <summary>
+            设置群公告DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomAccessVerifyDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomAccessVerifyDto.Enable">
+            <summary>
+            邀请验证开关
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.SetChatroomAnnouncementDto">
+            <summary>
+            设置群公告DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomAnnouncementDto.Announcement">
+            <summary>
+            公告
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomAnnouncementDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.SetChatroomNameDto">
+            <summary>
+            设置群昵称DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomNameDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.SetChatroomNameDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Chatroom.TransferChatroomOwnerDto">
+            <summary>
+            转让群主DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.TransferChatroomOwnerDto.Chatroom">
+            <summary>
+            群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Chatroom.TransferChatroomOwnerDto.UserName">
+            <summary>
+            新群主id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.BatchGetContactDto">
+            <summary>
+            批量获取好友简介DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.BatchGetContactDto.Users">
+            <summary>
+            好友列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.BatchVerifyUserDto">
+            <summary>
+             批量好友验证DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.BatchVerifyUserDto.Type">
+            <summary>
+            类型，1添加好友/公众号，2打招呼验证，3同意好友添加请求，4拒绝
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.BatchVerifyUserDto.Users">
+            <summary>
+            好友信息
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.BatchVerifyUserDto.Scene">
+            <summary>
+            添加好友来源类型，1QQ，2邮箱，3微信号，13通讯录，14群聊，15手机号，18附近的人，25漂流瓶，29摇一摇，30二维码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.BatchVerifyUserDto.Verify">
+            <summary>
+            添加好友时的验证信息(可为空，WX自己默认首次验证就是为空，若需要验证消息则再次发送填写该参数)
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.ContactDto">
+            <summary>
+            联系人DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.ContactDto.UserName">
+            <summary>
+            删除：用户ID
+            搜索：手机号/微信号/QQ号
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.GetContactDto">
+            <summary>
+            获取联系人DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.GetContactDto.Users">
+            <summary>
+            联系人列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.GetMFriendDto">
+            <summary>
+            获取通讯录朋友DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.GetMFriendDto.Md5">
+            <summary>
+            上次同步的MD5,首次传空
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.InitContactDto">
+            <summary>
+             初始化通讯录DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.InitContactDto.CurrentWxContactSeq">
+            <summary>
+            当前好友联系人请求号,第一次为0
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.SetContactFlagDto">
+            <summary>
+            设置联系人标志DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactFlagDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactFlagDto.Flag">
+            <summary>
+            标志（3：黑名单，6：标星，0：通讯录，9：消息免打扰，11：置顶聊天）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactFlagDto.Status">
+            <summary>
+            状态（启用：true，禁用：false）
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.SetContactLabelDto">
+            <summary>
+            设置用户标签DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactLabelDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactLabelDto.Labels">
+            <summary>
+            标签id列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.SetContactRemarkDto">
+            <summary>
+            设置用户备注DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactRemarkDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactRemarkDto.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.SetContactRemarkDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.UploadMContactDto">
+            <summary>
+            上传通讯录DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.UploadMContactDto.Mobile">
+            <summary>
+            自己手机号码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.UploadMContactDto.PhoneNumberList">
+            <summary>
+            手机号码列表（建议大小为15）
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Contact.VerifyUserDto">
+            <summary>
+             好友验证DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Type">
+            <summary>
+            类型，1添加好友/公众号，2打招呼验证，3同意好友添加请求，4拒绝
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Stranger_v1">
+            <summary>
+            对方stranger_v1(userName.@string)字符串,公众号时则为公众号APPID
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Stranger_v2">
+            <summary>
+            对方stranger_v2字符串(antispamTicket),公众号时忽略
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Scene">
+            <summary>
+            添加好友来源类型，1QQ，2邮箱，3微信号，13通讯录，14群聊，15手机号，18附近的人，25漂流瓶，29摇一摇，30二维码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Verify">
+            <summary>
+            添加好友时的验证信息(可为空，WX自己默认首次验证就是为空，若需要验证消息则再次发送填写该参数)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Contact.VerifyUserDto.Ticket">
+            <summary>
+            接受好友请求的ticket(若添加好友来源为群，则指定群用户名，可为空)
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Extension.BindOpMobileForRegDto">
+            <summary>
+             短信操作DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.OpCode">
+            <summary>
+            操作码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.PhoneNumber">
+            <summary>
+            手机号码，格式如：+8618012345678
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.Reg">
+            <summary>
+            是否注册,0:登陆,1:注册
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.RegsessionId">
+            <summary>
+            会话ID
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.BindOpMobileForRegDto.Authticket">
+            <summary>
+            票据
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Extension.OpLogDto">
+            <summary>
+            好友(群聊)操作请求DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.OpLogDto.Type">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.OpLogDto.Data">
+            <summary>
+            修改后的对象
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Extension.TenPayDto">
+            <summary>
+            腾讯支付DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.TenPayDto.Type">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.TenPayDto.ReqText">
+            <summary>
+            ReqText
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Extension.TenPayDto.ReqTextWx">
+            <summary>
+            ReqTextWx
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Favor.AddFavItemDto">
+            <summary>
+            添加收藏DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Favor.AddFavItemDto.Content">
+            <summary>
+            收藏xml内容
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Favor.AddFavItemDto.SourceId">
+            <summary>
+            源id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Favor.BatchFavItemDto">
+            <summary>
+            批量操作收藏夹Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Favor.BatchFavItemDto.FavIds">
+            <summary>
+            收藏夹Id列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Favor.FavItemDto">
+            <summary>
+            操作收藏夹Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Favor.FavItemDto.FavId">
+            <summary>
+            收藏夹Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Favor.FavSyncDto">
+            <summary>
+            同步收藏夹DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Favor.FavSyncDto.SyncKeyBase64">
+            <summary>
+            上一次同步Key,首次为null
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Label.AddContactLabelDto">
+            <summary>
+            添加标签DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Label.AddContactLabelDto.Name">
+            <summary>
+            标签名称
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Label.DelContactLabelDto">
+            <summary>
+            删除标签DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Label.DelContactLabelDto.Id">
+            <summary>
+            标签Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Label.ModifyContactLabelListDto">
+            <summary>
+            修改标签列表DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Label.ModifyContactLabelListDto.userLabelInfos">
+            <summary>
+            标签列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.CheckLoginQrcodeDto">
+            <summary>
+            获取登陆二维码状态DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.CheckLoginQrcodeDto.Uuid">
+            <summary>
+            二维码Uuid
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.CheckVerifyCodeDto">
+            <summary>
+            效验登录验证码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.CheckVerifyCodeDto.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.GetVerifyCodeDto">
+            <summary>
+            获取登录验证码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.GetVerifyCodeDto.PhoneNumber">
+            <summary>
+            手机号码,格式+8613666666666
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.LoginDto">
+            <summary>
+            获取DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.LoginDto.Channel">
+            <summary>
+            登录通道(0：用户密码，1：二维码，2：手机)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.LoginDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.LoginDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.LoginDto.Slider">
+            <summary>
+            过滑块
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.LoginDto.Init">
+            <summary>
+            新设备初始化
+            消息相关功能需要先初始化
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.URLDto">
+            <summary>
+            URL Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.URLDto.Url">
+            <summary>
+            Url链接
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Login.DataDto">
+            <summary>
+            重提数据Dto
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Login.DataDto.Terminal">
+            <summary>
+            0：安卓/1：iPad
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.CheckFileDownloadDto">
+            <summary>
+            校验大文件下载DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.aeskey">
+            <summary>
+            aeskey
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.type">
+            <summary>
+            type
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.name">
+            <summary>
+            name
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.ext">
+            <summary>
+            ext
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.md5">
+            <summary>
+            md5
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.size">
+            <summary>
+            size
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.fromuser">
+            <summary>
+            fromuser
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.CheckFileDownloadDto.touser">
+            <summary>
+            touser
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.DownloadMsgFileDto">
+            <summary>
+            下载消息文件DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.DownloadMsgFileDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.DownloadMsgFileDto.AppID">
+            <summary>
+            AppID
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.DownloadMsgFileDto.AttachID">
+            <summary>
+            附件ID
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.DownloadMsgFileDto.Length">
+            <summary>
+            获取大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.DownloadMsgFileDto.Offset">
+            <summary>
+            偏移
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.GetMsgImageDto">
+            <summary>
+            获取图片消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgImageDto.CompressType">
+            <summary>
+            压缩类型（0压缩 1高清）
+            当xml只中含有length 字段时 CompressType = 0 可以下载高清(有压缩情况)
+            当xml中含有hdlength 字段时 CompressType = 1 可以下载高清
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.GetMsgMediaDto">
+            <summary>
+            获取消息媒体DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgMediaDto.UserName">
+            <summary>
+            对方用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgMediaDto.NewMsgId">
+            <summary>
+            新消息Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgMediaDto.TotalLength">
+            <summary>
+            总长度或单次获取长度
+            音视频总长度大于61440时属于大文件，请分次获取
+            图片总长度大于65536时属于大文件，请分次获取
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgMediaDto.Offset">
+            <summary>
+            偏移，第一次为0
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.GetMsgVoiceDto">
+            <summary>
+            获取语音消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgVoiceDto.ClientMsgId">
+            <summary>
+            ClientMsgId
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgVoiceDto.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgVoiceDto.bufid">
+            <summary>
+            bufId
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.GetMsgVoiceDto.chatroom">
+            <summary>
+            chatroom
+            好友时忽略
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.MassMsgImageDto">
+            <summary>
+            群发图片消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgImageDto.Users">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgImageDto.ImageFileBase64">
+            <summary>
+            图片文件BASE64编码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.MassMsgTextDto">
+            <summary>
+            群发文本消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgTextDto.Users">
+            <summary>
+            用户id列表
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgTextDto.Content">
+            <summary>
+            文本内容
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.MassMsgVideoDto">
+            <summary>
+            群发视频消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVideoDto.Users">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVideoDto.MediaFileBase64">
+            <summary>
+            媒体文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVideoDto.ThumbImageFileBase64">
+            <summary>
+            媒体缩略图文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVideoDto.MediaTime">
+            <summary>
+            媒体时长（单位：秒）
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.MassMsgVoiceDto">
+            <summary>
+            群发语音消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVoiceDto.Users">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVoiceDto.MediaFileBase64">
+            <summary>
+            媒体文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVoiceDto.MediaTime">
+            <summary>
+            媒体时长（单位：毫秒）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MassMsgVoiceDto.Type">
+            <summary>
+            音频格式：AMR = 0, MP3 = 2, SILK = 4, SPEEX = 1, WAVE = 3
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.MsgStatusNotifyDto">
+            <summary>
+            消息状态通知DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.MsgStatusNotifyDto.MsgId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.RevokeMsgDto">
+            <summary>
+            撤回消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.RevokeMsgDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.RevokeMsgDto.NewMsgId">
+            <summary>
+            新消息Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendAppMsgDto">
+            <summary>
+            发送APP消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendAppMsgDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendAppMsgDto.Content">
+            <summary>
+            APP消息XML结构
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendEmojiMsgDto">
+            <summary>
+            发送Emoji消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendEmojiMsgDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendEmojiMsgDto.Md5">
+            <summary>
+            表情MD5
+            当Type≠0时忽略本参数
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendEmojiMsgDto.Type">
+            <summary>
+            表情类型 0普通表情,1石头剪刀布,2骰子
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendEmojiMsgDto.Content">
+            <summary>
+            1-3代表剪刀、石头、布,4-9代表骰子1-6点
+            当Type=0时忽略本参数
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendHDImageByCDNDto">
+            <summary>
+            发送CDN高清图片消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.CdnImgUrl">
+            <summary>
+            CDN图片地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.CdnImgSize">
+            <summary>
+            CDN图片大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.CdnHDImgSize">
+            <summary>
+            CDN高清图片大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.CdnThumbImgSize">
+            <summary>
+            CDN图片缩略图大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendHDImageByCDNDto.CdnImgAesKey">
+            <summary>
+            CDN图片加密KEY
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendImageByCDNDto">
+            <summary>
+            发送CDN图片消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageByCDNDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageByCDNDto.CdnImgUrl">
+            <summary>
+            CDN图片地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageByCDNDto.CdnImgSize">
+            <summary>
+            CDN图片大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageByCDNDto.CdnThumbImgSize">
+            <summary>
+            CDN图片缩略图大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageByCDNDto.CdnImgAesKey">
+            <summary>
+            CDN图片加密KEY
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendImageDto">
+            <summary>
+            发送图片消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageDto.Base64Image">
+            <summary>
+            图片BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendImageDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendMsgDto">
+            <summary>
+            发送文本消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgDto.Content">
+            <summary>
+            消息文本内容
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendMsgFileDto">
+            <summary>
+            发送文件消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgFileDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgFileDto.AttachId">
+            <summary>
+            附件ID
+            附件上传时返回或从消息同步里获取
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgFileDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgFileDto.Length">
+            <summary>
+            文件长度
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendMsgFileDto.Extension">
+            <summary>
+            文件扩展名
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendShareDto">
+            <summary>
+            发送分享消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.Type">
+            <summary>
+            app类型 3：音乐  4：小app  5：大app
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.Url">
+            <summary>
+            链接地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.DataUrl">
+            <summary>
+            数据链接地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendShareDto.ThumbUrl">
+            <summary>
+            缩略图链接地址
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendVideoByCDNDto">
+            <summary>
+            发送CDN视频消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.CdnVideoUrl">
+            <summary>
+            CDN视频地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.VideoSize">
+            <summary>
+            原视频大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.CdnVideoSize">
+            <summary>
+            CDN视频大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.CdnThumbVideoSize">
+            <summary>
+            CDN视频缩略大小
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoByCDNDto.CdnVideoAesKey">
+            <summary>
+            CDN视频加密KEY
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendVideoDto">
+            <summary>
+            发送视频消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoDto.VideoFileBase64">
+            <summary>
+            视频文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoDto.ImageFileBase64">
+            <summary>
+            缩略图文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVideoDto.VideoTime">
+            <summary>
+            视频时长
+            单位秒
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SendVoiceDto">
+            <summary>
+            发送语音消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVoiceDto.Type">
+            <summary>
+            音频格式：AMR = 0,SPEEX = 1,MP3 = 2,WAVE = 3,SILK = 4
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVoiceDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVoiceDto.DataFileBase64">
+            <summary>
+            音频文件BASE64
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SendVoiceDto.VoiceTime">
+            <summary>
+            音频时长，单位毫秒
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.ShareCardDto">
+            <summary>
+            分享名片DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareCardDto.UserName">
+            <summary>
+            对方用户id/群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareCardDto.Id">
+            <summary>
+            名片联系人id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareCardDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareCardDto.Alias">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.ShareFavDto">
+            <summary>
+            分享收藏DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareFavDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareFavDto.Ids">
+            <summary>
+            收藏Id列表
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.ShareLocationDto">
+            <summary>
+            分享位置DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareLocationDto.UserName">
+            <summary>
+            对方用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareLocationDto.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareLocationDto.Latitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.ShareLocationDto.Longitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.SyncMessageDto">
+            <summary>
+            同步消息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SyncMessageDto.Continueflag">
+            <summary>
+            继续同步标志
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SyncMessageDto.Ret">
+            <summary>
+            返回值
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.SyncMessageDto.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Message.UploadMsgFileDto">
+            <summary>
+            上传消息文件DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Message.UploadMsgFileDto.Data">
+            <summary>
+            文件Base64数据
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Other.LocationDto">
+            <summary>
+            位置DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Other.LocationDto.Latitude">
+            <summary>
+            经度
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Other.LocationDto.Longitude">
+            <summary>
+            纬度
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Other.SearchHardDeviceDto">
+            <summary>
+            搜索硬件设备DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Other.SearchHardDeviceDto.Qrcode">
+            <summary>
+            二维码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Other.ShakeGetDto">
+            <summary>
+            摇一摇获取结果DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Other.ShakeGetDto.ContextBase64">
+            <summary>
+            上下文内容BASE64
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Other.UploadDeviceStepDto">
+            <summary>
+            上传设备步数DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Other.UploadDeviceStepDto.Count">
+            <summary>
+            步数
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.CheckPayPasswordDto">
+            <summary>
+            检测支付密码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CheckPayPasswordDto.Password">
+            <summary>
+            支付密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.CreatePreTransferDto">
+            <summary>
+            创建转账DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreatePreTransferDto.UserName">
+            <summary>
+            对方用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreatePreTransferDto.Fee">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreatePreTransferDto.Description">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.ConfirmPreTransferDto">
+            <summary>
+            确认转账DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ConfirmPreTransferDto.BankType">
+            <summary>
+            银行类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ConfirmPreTransferDto.BindSerial">
+            <summary>
+            绑定卡号的Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ConfirmPreTransferDto.ReqKey">
+            <summary>
+            请求的Key
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ConfirmPreTransferDto.PayPassword">
+            <summary>
+            支付密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.CreateRedPacketDto">
+            <summary>
+            创建红包DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.Type">
+            <summary>
+            红包类型：0普通红包，1拼手气红包
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.UserName">
+            <summary>
+            好友或群id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.From">
+            <summary>
+            0个人红包，1群红包，3分享红包
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.Count">
+            <summary>
+            红包个数，必须大于等于1
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.Amount">
+            <summary>
+            红包金额，必须大于等于1，单位：分
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.CreateRedPacketDto.Content">
+            <summary>
+            红包语 如: 恭喜发财，大吉大利
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.OpenRedPacketDto">
+            <summary>
+            打开红包DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.ChannelId">
+            <summary>
+            通道Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.NativeUrl">
+            <summary>
+            NativeUrl
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.SendId">
+            <summary>
+            发送Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.Ver">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.SendUserName">
+            <summary>
+            发送用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.OpenRedPacketDto.TimingIdentifier">
+            <summary>
+            定时标识
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.QueryRedPacketDto">
+            <summary>
+            查询红包DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.ChannelId">
+            <summary>
+            通道Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.NativeUrl">
+            <summary>
+            NativeUrl
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.SendId">
+            <summary>
+            发送Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.Limit">
+            <summary>
+            单页记录数,默认11
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.QueryRedPacketDto.Offset">
+            <summary>
+            翻页偏移，第一页：0，第二页：11，第三页：22
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.ReceiveRedPacketDto">
+            <summary>
+            接收红包DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ReceiveRedPacketDto.ChannelId">
+            <summary>
+            通道Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ReceiveRedPacketDto.MsgType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ReceiveRedPacketDto.NativeUrl">
+            <summary>
+            NativeUrl
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ReceiveRedPacketDto.SendId">
+            <summary>
+            发送Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.ReceiveRedPacketDto.Ver">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.TransferConfirmDto">
+            <summary>
+            确认转账DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferConfirmDto.BankType">
+            <summary>
+            银行类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferConfirmDto.BindSerial">
+            <summary>
+            卡号绑定的序列号
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferConfirmDto.ReqKey">
+            <summary>
+            请求key
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferConfirmDto.Password">
+            <summary>
+            支付密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.TransferOperateDto">
+            <summary>
+            收款操作DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferOperateDto.InvalidTime">
+            <summary>
+            有效时间
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferOperateDto.TransId">
+            <summary>
+            转账Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferOperateDto.TransactionId">
+            <summary>
+            交易Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Payment.TransferSetF2FFeeDto">
+            <summary>
+            获取自定义金额收款二维码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferSetF2FFeeDto.Fee">
+            <summary>
+            金额，单位分，比如一元就是100
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Payment.TransferSetF2FFeeDto.Description">
+            <summary>
+            收款备注
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Register.BaseVerifyCodeDto">
+            <summary>
+            注册账号基础DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.BaseVerifyCodeDto.PhoneNumber">
+            <summary>
+            手机号码,格式+8613666666666
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Register.CheckRegisterCodeDto">
+            <summary>
+            效验注册验证码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.CheckRegisterCodeDto.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.CheckRegisterCodeDto.SessionId">
+            <summary>
+            会话id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Register.GetRegisterCodeDto">
+            <summary>
+            获取注册验证码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.GetRegisterCodeDto.AuthTicket">
+            <summary>
+            票据
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Register.RegisterDto">
+            <summary>
+            注册账号DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.RegisterDto.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.RegisterDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Register.RegisterDto.Ticket">
+            <summary>
+            注册票据
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.RestfulData">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData.code">
+            <summary>
+            错误码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData.message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData.url">
+            <summary>
+            相关的链接帮助地址
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.RestfulData`1">
+            <summary>
+            返回数据
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData`1.flag">
+            <summary>
+            标志信息（标识环境信息是否已改变）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.RestfulData`1.data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsCommentDto">
+            <summary>
+            朋友圈回复DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsCommentDto.Type">
+            <summary>
+            类型(1:点赞, 2:文本, 3:消息, 4:with, 5:陌生人点赞)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsCommentDto.Id">
+            <summary>
+            动态Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsCommentDto.UserName">
+            <summary>
+            对方用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsCommentDto.ReplyId">
+            <summary>
+            回复id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsCommentDto.Content">
+            <summary>
+            回复内容
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsObjectDetailDto">
+            <summary>
+            朋友圈动态详情DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsObjectDetailDto.Id">
+            <summary>
+            动态Id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsObjectOperateDto">
+            <summary>
+            朋友圈操作DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsObjectOperateDto.Id">
+            <summary>
+            朋友圈动态Id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsObjectOperateDto.Type">
+            <summary>
+            1删除朋友圈，2设为隐私，3设为公开，4删除评论，5取消点赞
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsObjectOperateDto.Ext">
+            <summary>
+            扩展id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsOriginalDto">
+            <summary>
+            最早朋友圈DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsOriginalDto.UserName">
+            <summary>
+            用户名（可自己）
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsPostDto">
+            <summary>
+            发朋友圈DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsPostDto.ContentXml">
+            <summary>
+            朋友圈xml结构
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsPostDto.BlackList">
+            <summary>
+            黑名单
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsPostDto.WithList">
+            <summary>
+            提醒名单
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsSwitchDto">
+            <summary>
+            设置朋友圈权限DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsSwitchDto.Function">
+            <summary>
+            允许朋友查看朋友圈的范围：7297，值（全部：4294967295，最近半年：4320，最近一个月：720，最近3天：72）
+            允许陌生人查看十条朋友圈：开启（7296，值：72），关闭（7297，值：72）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsSwitchDto.Value">
+            <summary>
+            开关
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsTimeLineDto">
+            <summary>
+            获取朋友圈动态DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsTimeLineDto.FirstPageMd5">
+            <summary>
+            上页MD5
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsTimeLineDto.Maxid">
+            <summary>
+            上一次最大动态id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsUploadDto">
+            <summary>
+            朋友圈上传图片DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsUploadDto.ImageFileBase64">
+            <summary>
+            图片文件BASE64
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.Sns.SnsUserPageDto">
+            <summary>
+            好友朋友圈动态DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsUserPageDto.UserName">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsUserPageDto.FirstPageMd5">
+            <summary>
+            上页MD5
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.Sns.SnsUserPageDto.Maxid">
+            <summary>
+            上一次最大动态id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.UnBan.UnBanNoGuidDto">
+            <summary>
+            封号操作DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.UnBan.UnBanNoGuidDto.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.UnBan.UnBanNoGuidDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.UnBan.UnBanNoGuidDto.ProxyIP">
+            <summary>
+            代理IP
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.UnBan.TempLoginDto">
+            <summary>
+            临时登录DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.UnBan.TempLoginDto.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.UnBan.TempLoginDto.Force">
+            <summary>
+            是否强开
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.BindEmailDto">
+            <summary>
+            绑定邮箱DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.BindEmailDto.OpCode">
+            <summary>
+            操作码(1:绑定，2:解绑)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.BindEmailDto.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.BindMobileDto">
+            <summary>
+            绑定手机号DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.BindMobileDto.OpCode">
+            <summary>
+            1：获取验证码，2：绑定手机号，3：解绑手机号
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.BindMobileDto.PhoneNumber">
+            <summary>
+            手机号码
+            国外号请带上完整前缀（如+1）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.BindMobileDto.VerifyCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.DelSafeDeviceDto">
+            <summary>
+            删除安全设备DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.DelSafeDeviceDto.Uuid">
+            <summary>
+            设备uuid
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.FunctionSwitchDto">
+            <summary>
+            好友验证功能切换
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.FunctionSwitchDto.Function">
+            <summary>
+            4：加我为朋友是需要验证(1开启，2关闭)
+            7：向我推荐通讯录朋友（1关闭，2开启）
+            8：允许手机号找到我（1关闭，2开启）
+            25：允许微信号找到我（1关闭，2开启）
+            38：允许群聊添加我（1关闭，2开启）
+            39：允许我的二维码添加我（1关闭，2开启）
+            40：允许名片添加我（1关闭，2开启）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.FunctionSwitchDto.Value">
+            <summary>
+            开关
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.GeneralSetDto">
+            <summary>
+            通用设置DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.GeneralSetDto.Type">
+            <summary>
+            类型（1：设置微信号）
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.GeneralSetDto.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.GetQrcodeDto">
+            <summary>
+            获取二维码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.GetQrcodeDto.UserName">
+            <summary>
+            个人或群id
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.OncePasswordDto">
+            <summary>
+            一键修改密码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.OncePasswordDto.OldPassword">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.OncePasswordDto.NewPassword">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.SetAlisaDto">
+            <summary>
+            设置微信号DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetAlisaDto.Alisa">
+            <summary>
+            微信号
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.SetPasswordDto">
+            <summary>
+            设置密码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetPasswordDto.Ticket">
+            <summary>
+            验证密码票据
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetPasswordDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.SetUserInfoDto">
+            <summary>
+            设置用户信息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.NickName">
+            <summary>
+            昵称(为null则不修改)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.Sex">
+            <summary>
+            性别：0：未知，1：男，2：女
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.Signature">
+            <summary>
+            签名(为null则不修改)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.Country">
+            <summary>
+            国家，国家简写字母，如：CN(为null则不修改)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.Province">
+            <summary>
+            省份，省份拼音，如：zhejiang(为null则不修改)
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.SetUserInfoDto.City">
+            <summary>
+            城市，城市拼音，如：hangzhou(为null则不修改)
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.UploadHeadImageDto">
+            <summary>
+            上传头像DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.UploadHeadImageDto.Base64Image">
+            <summary>
+            图片BASE64编码
+            不带base64头部声明
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.VerifyPasswordDto">
+            <summary>
+            验证密码DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.VerifyPasswordDto.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Models.User.VerifyPersonalInfoDto">
+            <summary>
+            验证个人信息DTO
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.VerifyPersonalInfoDto.RealName">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.VerifyPersonalInfoDto.CardType">
+            <summary>
+            卡类型
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Models.User.VerifyPersonalInfoDto.CardNumber">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="T:WeChat.Api.Program">
+            <summary>
+            应用程序启动类
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Program.Main(System.String[])">
+            <summary>
+            Main函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:WeChat.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            创建 host 主机
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WeChat.Api.Startup">
+            <summary>
+            启动类
+            </summary>
+        </member>
+        <member name="P:WeChat.Api.Startup.Configuration">
+            <summary>
+            配置器
+            </summary>
+        </member>
+        <member name="M:WeChat.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:WeChat.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置服务
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:WeChat.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            配置使用中间件
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,867 @@
+﻿2020-11-29 23:20:47.5379 Info Message Template Auto Format enabled
+2020-11-29 23:20:47.6227 Info Adding target FileTarget(Name=allfile)
+2020-11-29 23:20:47.6227 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-29 23:20:47.6227 Info Adding target NullTarget(Name=blackhole)
+2020-11-29 23:20:47.6710 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=56, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-29 23:20:47.7091 Info Configuration initialized.
+2020-11-29 23:20:47.7091 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-29 23:38:22.2212 Info Message Template Auto Format enabled
+2020-11-29 23:38:22.2904 Info Adding target FileTarget(Name=allfile)
+2020-11-29 23:38:22.2904 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-29 23:38:22.2904 Info Adding target NullTarget(Name=blackhole)
+2020-11-29 23:38:22.3260 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=56, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-29 23:38:22.3633 Info Configuration initialized.
+2020-11-29 23:38:22.3633 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-29 23:49:42.8913 Info Message Template Auto Format enabled
+2020-11-29 23:49:42.9760 Info Adding target FileTarget(Name=allfile)
+2020-11-29 23:49:42.9760 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-29 23:49:42.9760 Info Adding target NullTarget(Name=blackhole)
+2020-11-29 23:49:43.0205 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=55, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-29 23:49:43.0510 Info Configuration initialized.
+2020-11-29 23:49:43.0510 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-29 23:56:07.0959 Info Message Template Auto Format enabled
+2020-11-29 23:56:07.1659 Info Adding target FileTarget(Name=allfile)
+2020-11-29 23:56:07.1659 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-29 23:56:07.1659 Info Adding target NullTarget(Name=blackhole)
+2020-11-29 23:56:07.2046 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-29 23:56:07.2313 Info Configuration initialized.
+2020-11-29 23:56:07.2313 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 00:19:42.2706 Info Message Template Auto Format enabled
+2020-11-30 00:19:42.3425 Info Adding target FileTarget(Name=allfile)
+2020-11-30 00:19:42.3425 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 00:19:42.3425 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 00:19:42.3784 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 00:19:42.4032 Info Configuration initialized.
+2020-11-30 00:19:42.4032 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 00:23:01.5926 Info Message Template Auto Format enabled
+2020-11-30 00:23:01.6773 Info Adding target FileTarget(Name=allfile)
+2020-11-30 00:23:01.6773 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 00:23:01.6773 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 00:23:01.7354 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 00:23:01.7671 Info Configuration initialized.
+2020-11-30 00:23:01.7671 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 06:16:39.7804 Info Message Template Auto Format enabled
+2020-11-30 06:16:39.8715 Info Adding target FileTarget(Name=allfile)
+2020-11-30 06:16:39.8715 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 06:16:39.8715 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 06:16:39.9160 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 06:16:39.9534 Info Configuration initialized.
+2020-11-30 06:16:39.9534 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 06:31:03.4606 Info Message Template Auto Format enabled
+2020-11-30 06:31:03.5492 Info Adding target FileTarget(Name=allfile)
+2020-11-30 06:31:03.5525 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 06:31:03.5525 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 06:31:03.5881 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 06:31:03.6144 Info Configuration initialized.
+2020-11-30 06:31:03.6144 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 06:38:59.7345 Info Message Template Auto Format enabled
+2020-11-30 06:38:59.8020 Info Adding target FileTarget(Name=allfile)
+2020-11-30 06:38:59.8020 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 06:38:59.8020 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 06:38:59.8382 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 06:38:59.8619 Info Configuration initialized.
+2020-11-30 06:38:59.8619 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 06:40:30.8399 Info Message Template Auto Format enabled
+2020-11-30 06:40:30.9165 Info Adding target FileTarget(Name=allfile)
+2020-11-30 06:40:30.9165 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 06:40:30.9165 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 06:40:30.9606 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 06:40:31.0001 Info Configuration initialized.
+2020-11-30 06:40:31.0001 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 07:31:18.2671 Info Message Template Auto Format enabled
+2020-11-30 07:31:18.3593 Info Adding target FileTarget(Name=allfile)
+2020-11-30 07:31:18.3593 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 07:31:18.3643 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 07:31:18.4044 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 07:31:18.4491 Info Configuration initialized.
+2020-11-30 07:31:18.4491 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 17:11:19.6513 Info Message Template Auto Format enabled
+2020-11-30 17:11:19.7424 Info Adding target FileTarget(Name=allfile)
+2020-11-30 17:11:19.7424 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 17:11:19.7424 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 17:11:19.7934 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 17:11:19.8418 Info Configuration initialized.
+2020-11-30 17:11:19.8561 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 17:31:29.4618 Info Message Template Auto Format enabled
+2020-11-30 17:31:29.5494 Info Adding target FileTarget(Name=allfile)
+2020-11-30 17:31:29.5527 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 17:31:29.5527 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 17:31:29.6036 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 17:31:29.6443 Info Configuration initialized.
+2020-11-30 17:31:29.6443 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-11-30 17:38:45.6834 Info Message Template Auto Format enabled
+2020-11-30 17:38:45.7772 Info Adding target FileTarget(Name=allfile)
+2020-11-30 17:38:45.7772 Info Adding target FileTarget(Name=ownFile-web)
+2020-11-30 17:38:45.7772 Info Adding target NullTarget(Name=blackhole)
+2020-11-30 17:38:45.8265 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-11-30 17:38:45.8629 Info Configuration initialized.
+2020-11-30 17:38:45.8644 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 00:25:23.8143 Info Message Template Auto Format enabled
+2020-12-01 00:25:23.9190 Info Adding target FileTarget(Name=allfile)
+2020-12-01 00:25:23.9190 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 00:25:23.9253 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 00:25:23.9777 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 00:25:24.0088 Info Configuration initialized.
+2020-12-01 00:25:24.0088 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 00:29:40.0311 Info Message Template Auto Format enabled
+2020-12-01 00:29:40.1199 Info Adding target FileTarget(Name=allfile)
+2020-12-01 00:29:40.1199 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 00:29:40.1199 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 00:29:40.1698 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 00:29:40.2076 Info Configuration initialized.
+2020-12-01 00:29:40.2076 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 01:06:43.5954 Info Message Template Auto Format enabled
+2020-12-01 01:06:43.7119 Info Adding target FileTarget(Name=allfile)
+2020-12-01 01:06:43.7119 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 01:06:43.7119 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 01:06:43.7658 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 01:06:43.8138 Info Configuration initialized.
+2020-12-01 01:06:43.8138 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 17:24:09.0499 Info Message Template Auto Format enabled
+2020-12-01 17:24:09.1201 Info Adding target FileTarget(Name=allfile)
+2020-12-01 17:24:09.1201 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 17:24:09.1201 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 17:24:09.1568 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 17:24:09.1820 Info Configuration initialized.
+2020-12-01 17:24:09.1820 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 20:33:30.7692 Info Message Template Auto Format enabled
+2020-12-01 20:33:30.8419 Info Adding target FileTarget(Name=allfile)
+2020-12-01 20:33:30.8419 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 20:33:30.8486 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 20:33:30.8885 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 20:33:30.9356 Info Configuration initialized.
+2020-12-01 20:33:30.9356 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 21:41:51.3577 Info Message Template Auto Format enabled
+2020-12-01 21:41:51.4557 Info Adding target FileTarget(Name=allfile)
+2020-12-01 21:41:51.4610 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 21:41:51.4610 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 21:41:51.5140 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 21:41:51.5575 Info Configuration initialized.
+2020-12-01 21:41:51.5575 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 21:53:23.5547 Info Message Template Auto Format enabled
+2020-12-01 21:53:23.6692 Info Adding target FileTarget(Name=allfile)
+2020-12-01 21:53:23.6692 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 21:53:23.6762 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 21:53:23.7187 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 21:53:23.7499 Info Configuration initialized.
+2020-12-01 21:53:23.7499 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 21:55:57.6859 Info Message Template Auto Format enabled
+2020-12-01 21:55:57.7768 Info Adding target FileTarget(Name=allfile)
+2020-12-01 21:55:57.7768 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 21:55:57.7768 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 21:55:57.8232 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 21:55:57.8566 Info Configuration initialized.
+2020-12-01 21:55:57.8566 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 22:45:41.1807 Info Message Template Auto Format enabled
+2020-12-01 22:45:41.2996 Info Adding target FileTarget(Name=allfile)
+2020-12-01 22:45:41.3032 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 22:45:41.3032 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 22:45:41.3668 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 22:45:41.4025 Info Configuration initialized.
+2020-12-01 22:45:41.4025 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-01 23:33:05.3617 Info Message Template Auto Format enabled
+2020-12-01 23:33:05.4923 Info Adding target FileTarget(Name=allfile)
+2020-12-01 23:33:05.4923 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-01 23:33:05.4923 Info Adding target NullTarget(Name=blackhole)
+2020-12-01 23:33:05.5410 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-01 23:33:05.5773 Info Configuration initialized.
+2020-12-01 23:33:05.5773 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-02 17:15:06.5542 Info Message Template Auto Format enabled
+2020-12-02 17:15:06.6530 Info Adding target FileTarget(Name=allfile)
+2020-12-02 17:15:06.6530 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-02 17:15:06.6530 Info Adding target NullTarget(Name=blackhole)
+2020-12-02 17:15:06.6978 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-02 17:15:06.7290 Info Configuration initialized.
+2020-12-02 17:15:06.7290 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 01:32:11.5006 Info Message Template Auto Format enabled
+2020-12-03 01:32:11.6067 Info Adding target FileTarget(Name=allfile)
+2020-12-03 01:32:11.6067 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 01:32:11.6067 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 01:32:11.6564 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 01:32:11.6936 Info Configuration initialized.
+2020-12-03 01:32:11.6936 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 01:43:39.9587 Info Message Template Auto Format enabled
+2020-12-03 01:43:40.0517 Info Adding target FileTarget(Name=allfile)
+2020-12-03 01:43:40.0517 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 01:43:40.0517 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 01:43:40.1011 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 01:43:40.1355 Info Configuration initialized.
+2020-12-03 01:43:40.1355 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 01:50:46.1532 Info Message Template Auto Format enabled
+2020-12-03 01:50:46.2447 Info Adding target FileTarget(Name=allfile)
+2020-12-03 01:50:46.2447 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 01:50:46.2447 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 01:50:46.2930 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 01:50:46.3206 Info Configuration initialized.
+2020-12-03 01:50:46.3206 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 02:20:24.0278 Info Message Template Auto Format enabled
+2020-12-03 02:20:24.1245 Info Adding target FileTarget(Name=allfile)
+2020-12-03 02:20:24.1245 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 02:20:24.1290 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 02:20:24.1678 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 02:20:24.2076 Info Configuration initialized.
+2020-12-03 02:20:24.2076 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 02:44:59.9429 Info Message Template Auto Format enabled
+2020-12-03 02:45:00.0433 Info Adding target FileTarget(Name=allfile)
+2020-12-03 02:45:00.0433 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 02:45:00.0433 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 02:45:00.0921 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 02:45:00.1236 Info Configuration initialized.
+2020-12-03 02:45:00.1236 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 10:10:16.3264 Info Message Template Auto Format enabled
+2020-12-03 10:10:16.4292 Info Adding target FileTarget(Name=allfile)
+2020-12-03 10:10:16.4292 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 10:10:16.4292 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 10:10:16.4753 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 10:10:16.5099 Info Configuration initialized.
+2020-12-03 10:10:16.5099 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 10:21:58.7318 Info Message Template Auto Format enabled
+2020-12-03 10:21:58.8035 Info Adding target FileTarget(Name=allfile)
+2020-12-03 10:21:58.8035 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 10:21:58.8035 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 10:21:58.8411 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 10:21:58.8673 Info Configuration initialized.
+2020-12-03 10:21:58.8673 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 10:32:05.7564 Info Message Template Auto Format enabled
+2020-12-03 10:32:05.8420 Info Adding target FileTarget(Name=allfile)
+2020-12-03 10:32:05.8420 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 10:32:05.8420 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 10:32:05.8799 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 10:32:05.9104 Info Configuration initialized.
+2020-12-03 10:32:05.9104 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 10:48:51.5635 Info Message Template Auto Format enabled
+2020-12-03 10:48:51.6394 Info Adding target FileTarget(Name=allfile)
+2020-12-03 10:48:51.6445 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 10:48:51.6445 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 10:48:51.7111 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 10:48:51.7487 Info Configuration initialized.
+2020-12-03 10:48:51.7487 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 10:55:04.6856 Info Message Template Auto Format enabled
+2020-12-03 10:55:04.7557 Info Adding target FileTarget(Name=allfile)
+2020-12-03 10:55:04.7557 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 10:55:04.7557 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 10:55:04.8026 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 10:55:04.8309 Info Configuration initialized.
+2020-12-03 10:55:04.8320 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-03 11:15:56.9050 Info Message Template Auto Format enabled
+2020-12-03 11:15:56.9881 Info Adding target FileTarget(Name=allfile)
+2020-12-03 11:15:56.9916 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-03 11:15:56.9916 Info Adding target NullTarget(Name=blackhole)
+2020-12-03 11:15:57.0287 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-03 11:15:57.0556 Info Configuration initialized.
+2020-12-03 11:15:57.0556 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-12 02:57:43.7549 Info Message Template Auto Format enabled
+2020-12-12 02:57:43.8545 Info Adding target FileTarget(Name=allfile)
+2020-12-12 02:57:43.8579 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-12 02:57:43.8579 Info Adding target NullTarget(Name=blackhole)
+2020-12-12 02:57:43.9022 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-12 02:57:43.9338 Info Configuration initialized.
+2020-12-12 02:57:43.9338 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-12 02:58:50.5207 Info Message Template Auto Format enabled
+2020-12-12 02:58:50.6076 Info Adding target FileTarget(Name=allfile)
+2020-12-12 02:58:50.6076 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-12 02:58:50.6076 Info Adding target NullTarget(Name=blackhole)
+2020-12-12 02:58:50.6696 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-12 02:58:50.7014 Info Configuration initialized.
+2020-12-12 02:58:50.7014 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-13 10:32:21.6646 Info Message Template Auto Format enabled
+2020-12-13 10:32:21.8189 Info Adding target FileTarget(Name=allfile)
+2020-12-13 10:32:21.8189 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-13 10:32:21.8189 Info Adding target NullTarget(Name=blackhole)
+2020-12-13 10:32:21.8927 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-13 10:32:21.9366 Info Configuration initialized.
+2020-12-13 10:32:21.9393 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-19 02:53:22.7543 Info Message Template Auto Format enabled
+2020-12-19 02:53:22.8459 Info Adding target FileTarget(Name=allfile)
+2020-12-19 02:53:22.8459 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-19 02:53:22.8459 Info Adding target NullTarget(Name=blackhole)
+2020-12-19 02:53:22.8909 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-19 02:53:22.9232 Info Configuration initialized.
+2020-12-19 02:53:22.9232 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-19 03:44:59.9715 Info Message Template Auto Format enabled
+2020-12-19 03:45:00.0562 Info Adding target FileTarget(Name=allfile)
+2020-12-19 03:45:00.0562 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-19 03:45:00.0562 Info Adding target NullTarget(Name=blackhole)
+2020-12-19 03:45:00.0916 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-19 03:45:00.1172 Info Configuration initialized.
+2020-12-19 03:45:00.1172 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 00:38:42.0105 Info Message Template Auto Format enabled
+2020-12-20 00:38:42.0918 Info Adding target FileTarget(Name=allfile)
+2020-12-20 00:38:42.0918 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 00:38:42.0974 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 00:38:42.1364 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 00:38:42.1805 Info Configuration initialized.
+2020-12-20 00:38:42.1805 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 00:40:14.3820 Info Message Template Auto Format enabled
+2020-12-20 00:40:14.4838 Info Adding target FileTarget(Name=allfile)
+2020-12-20 00:40:14.4872 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 00:40:14.4872 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 00:40:14.5264 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 00:40:14.5740 Info Configuration initialized.
+2020-12-20 00:40:14.5740 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 01:48:44.2821 Info Message Template Auto Format enabled
+2020-12-20 01:48:44.3507 Info Adding target FileTarget(Name=allfile)
+2020-12-20 01:48:44.3507 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 01:48:44.3507 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 01:48:44.4017 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 01:48:44.4370 Info Configuration initialized.
+2020-12-20 01:48:44.4370 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 02:58:33.9050 Info Message Template Auto Format enabled
+2020-12-20 02:58:33.9823 Info Adding target FileTarget(Name=allfile)
+2020-12-20 02:58:33.9823 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 02:58:33.9823 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 02:58:34.0245 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 02:58:34.0573 Info Configuration initialized.
+2020-12-20 02:58:34.0573 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 03:01:17.0548 Info Message Template Auto Format enabled
+2020-12-20 03:01:17.1530 Info Adding target FileTarget(Name=allfile)
+2020-12-20 03:01:17.1530 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 03:01:17.1598 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 03:01:17.2127 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 03:01:17.2498 Info Configuration initialized.
+2020-12-20 03:01:17.2498 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 03:16:06.1847 Info Message Template Auto Format enabled
+2020-12-20 03:16:06.2729 Info Adding target FileTarget(Name=allfile)
+2020-12-20 03:16:06.2729 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 03:16:06.2729 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 03:16:06.3218 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 03:16:06.3592 Info Configuration initialized.
+2020-12-20 03:16:06.3592 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-20 03:42:50.5952 Info Message Template Auto Format enabled
+2020-12-20 03:42:50.6705 Info Adding target FileTarget(Name=allfile)
+2020-12-20 03:42:50.6705 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-20 03:42:50.6756 Info Adding target NullTarget(Name=blackhole)
+2020-12-20 03:42:50.7190 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-20 03:42:50.7481 Info Configuration initialized.
+2020-12-20 03:42:50.7481 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 02:47:09.7943 Info Message Template Auto Format enabled
+2020-12-21 02:47:09.8676 Info Adding target FileTarget(Name=allfile)
+2020-12-21 02:47:09.8676 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 02:47:09.8676 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 02:47:09.9042 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 02:47:09.9316 Info Configuration initialized.
+2020-12-21 02:47:09.9316 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 02:48:15.8912 Info Message Template Auto Format enabled
+2020-12-21 02:48:15.9922 Info Adding target FileTarget(Name=allfile)
+2020-12-21 02:48:15.9922 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 02:48:15.9922 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 02:48:16.0368 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 02:48:16.0676 Info Configuration initialized.
+2020-12-21 02:48:16.0676 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 15:25:39.4038 Info Message Template Auto Format enabled
+2020-12-21 15:25:39.4931 Info Adding target FileTarget(Name=allfile)
+2020-12-21 15:25:39.4931 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 15:25:39.4931 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 15:25:39.5362 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 15:25:39.5823 Info Configuration initialized.
+2020-12-21 15:25:39.5823 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 16:56:18.4360 Info Message Template Auto Format enabled
+2020-12-21 16:56:18.5364 Info Adding target FileTarget(Name=allfile)
+2020-12-21 16:56:18.5364 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 16:56:18.5364 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 16:56:18.5830 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 16:56:18.6306 Info Configuration initialized.
+2020-12-21 16:56:18.6306 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 18:17:44.0519 Info Message Template Auto Format enabled
+2020-12-21 18:17:44.1230 Info Adding target FileTarget(Name=allfile)
+2020-12-21 18:17:44.1230 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 18:17:44.1230 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 18:17:44.1610 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 18:17:44.1865 Info Configuration initialized.
+2020-12-21 18:17:44.1865 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 18:22:53.4208 Info Message Template Auto Format enabled
+2020-12-21 18:22:53.5082 Info Adding target FileTarget(Name=allfile)
+2020-12-21 18:22:53.5082 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 18:22:53.5082 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 18:22:53.5680 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 18:22:53.6187 Info Configuration initialized.
+2020-12-21 18:22:53.6187 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-21 18:26:43.3606 Info Message Template Auto Format enabled
+2020-12-21 18:26:43.4889 Info Adding target FileTarget(Name=allfile)
+2020-12-21 18:26:43.4889 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-21 18:26:43.4889 Info Adding target NullTarget(Name=blackhole)
+2020-12-21 18:26:43.5450 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-21 18:26:43.5759 Info Configuration initialized.
+2020-12-21 18:26:43.5759 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 02:37:21.5243 Info Message Template Auto Format enabled
+2020-12-22 02:37:21.6302 Info Adding target FileTarget(Name=allfile)
+2020-12-22 02:37:21.6302 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 02:37:21.6436 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 02:37:21.6842 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 02:37:21.7145 Info Configuration initialized.
+2020-12-22 02:37:21.7145 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 02:41:24.3838 Info Message Template Auto Format enabled
+2020-12-22 02:41:24.4541 Info Adding target FileTarget(Name=allfile)
+2020-12-22 02:41:24.4572 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 02:41:24.4572 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 02:41:24.4897 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 02:41:24.5157 Info Configuration initialized.
+2020-12-22 02:41:24.5157 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 02:55:50.7356 Info Message Template Auto Format enabled
+2020-12-22 02:55:50.8020 Info Adding target FileTarget(Name=allfile)
+2020-12-22 02:55:50.8020 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 02:55:50.8020 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 02:55:50.8405 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 02:55:50.8657 Info Configuration initialized.
+2020-12-22 02:55:50.8657 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 03:17:54.9321 Info Message Template Auto Format enabled
+2020-12-22 03:17:55.0146 Info Adding target FileTarget(Name=allfile)
+2020-12-22 03:17:55.0146 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 03:17:55.0190 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 03:17:55.0580 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 03:17:55.0976 Info Configuration initialized.
+2020-12-22 03:17:55.0976 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 03:38:14.1760 Info Message Template Auto Format enabled
+2020-12-22 03:38:14.2592 Info Adding target FileTarget(Name=allfile)
+2020-12-22 03:38:14.2592 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 03:38:14.2592 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 03:38:14.3033 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 03:38:14.3345 Info Configuration initialized.
+2020-12-22 03:38:14.3345 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 03:57:49.1630 Info Message Template Auto Format enabled
+2020-12-22 03:57:49.2516 Info Adding target FileTarget(Name=allfile)
+2020-12-22 03:57:49.2551 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 03:57:49.2551 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 03:57:49.3025 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 03:57:49.3341 Info Configuration initialized.
+2020-12-22 03:57:49.3341 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 05:06:57.1608 Info Message Template Auto Format enabled
+2020-12-22 05:06:57.2379 Info Adding target FileTarget(Name=allfile)
+2020-12-22 05:06:57.2379 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 05:06:57.2379 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 05:06:57.2736 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 05:06:57.2991 Info Configuration initialized.
+2020-12-22 05:06:57.3003 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 06:01:36.2285 Info Message Template Auto Format enabled
+2020-12-22 06:01:36.2971 Info Adding target FileTarget(Name=allfile)
+2020-12-22 06:01:36.2997 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 06:01:36.2997 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 06:01:36.3399 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 06:01:36.3657 Info Configuration initialized.
+2020-12-22 06:01:36.3657 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 06:30:30.3029 Info Message Template Auto Format enabled
+2020-12-22 06:30:30.3709 Info Adding target FileTarget(Name=allfile)
+2020-12-22 06:30:30.3709 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 06:30:30.3709 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 06:30:30.4060 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 06:30:30.4317 Info Configuration initialized.
+2020-12-22 06:30:30.4317 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 06:46:36.2791 Info Message Template Auto Format enabled
+2020-12-22 06:46:36.3481 Info Adding target FileTarget(Name=allfile)
+2020-12-22 06:46:36.3481 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 06:46:36.3481 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 06:46:36.3855 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 06:46:36.4109 Info Configuration initialized.
+2020-12-22 06:46:36.4109 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:09:07.9641 Info Message Template Auto Format enabled
+2020-12-22 07:09:08.0525 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:09:08.0525 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:09:08.0525 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:09:08.0965 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:09:08.1285 Info Configuration initialized.
+2020-12-22 07:09:08.1285 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:15:27.6025 Info Message Template Auto Format enabled
+2020-12-22 07:15:27.6918 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:15:27.6918 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:15:27.6918 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:15:27.7373 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:15:27.7687 Info Configuration initialized.
+2020-12-22 07:15:27.7687 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:23:59.0537 Info Message Template Auto Format enabled
+2020-12-22 07:23:59.1236 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:23:59.1270 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:23:59.1270 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:23:59.1626 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:23:59.1898 Info Configuration initialized.
+2020-12-22 07:23:59.1898 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:26:50.0438 Info Message Template Auto Format enabled
+2020-12-22 07:26:50.1174 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:26:50.1174 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:26:50.1174 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:26:50.1593 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:26:50.1847 Info Configuration initialized.
+2020-12-22 07:26:50.1847 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:29:46.7685 Info Message Template Auto Format enabled
+2020-12-22 07:29:46.8594 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:29:46.8639 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:29:46.8639 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:29:46.9136 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:29:46.9446 Info Configuration initialized.
+2020-12-22 07:29:46.9446 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:33:23.3905 Info Message Template Auto Format enabled
+2020-12-22 07:33:23.4743 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:33:23.4743 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:33:23.4743 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:33:23.5209 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:33:23.5529 Info Configuration initialized.
+2020-12-22 07:33:23.5529 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:44:17.2844 Info Message Template Auto Format enabled
+2020-12-22 07:44:17.3648 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:44:17.3648 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:44:17.3648 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:44:17.3999 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:44:17.4251 Info Configuration initialized.
+2020-12-22 07:44:17.4251 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 07:59:46.6739 Info Message Template Auto Format enabled
+2020-12-22 07:59:46.7418 Info Adding target FileTarget(Name=allfile)
+2020-12-22 07:59:46.7418 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 07:59:46.7418 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 07:59:46.8024 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 07:59:46.8303 Info Configuration initialized.
+2020-12-22 07:59:46.8303 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 08:11:11.5014 Info Message Template Auto Format enabled
+2020-12-22 08:11:11.5848 Info Adding target FileTarget(Name=allfile)
+2020-12-22 08:11:11.5848 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 08:11:11.5848 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 08:11:11.6295 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 08:11:11.6601 Info Configuration initialized.
+2020-12-22 08:11:11.6601 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-22 08:31:16.1256 Info Message Template Auto Format enabled
+2020-12-22 08:31:16.1931 Info Adding target FileTarget(Name=allfile)
+2020-12-22 08:31:16.1931 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-22 08:31:16.1931 Info Adding target NullTarget(Name=blackhole)
+2020-12-22 08:31:16.2286 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-22 08:31:16.2546 Info Configuration initialized.
+2020-12-22 08:31:16.2546 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 15:48:20.1123 Info Message Template Auto Format enabled
+2020-12-24 15:48:20.2017 Info Adding target FileTarget(Name=allfile)
+2020-12-24 15:48:20.2017 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 15:48:20.2017 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 15:48:20.2484 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 15:48:20.2817 Info Configuration initialized.
+2020-12-24 15:48:20.2817 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 16:38:18.0378 Info Message Template Auto Format enabled
+2020-12-24 16:38:18.1083 Info Adding target FileTarget(Name=allfile)
+2020-12-24 16:38:18.1083 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 16:38:18.1083 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 16:38:18.1445 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 16:38:18.1701 Info Configuration initialized.
+2020-12-24 16:38:18.1701 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 16:40:22.0934 Info Message Template Auto Format enabled
+2020-12-24 16:40:22.1632 Info Adding target FileTarget(Name=allfile)
+2020-12-24 16:40:22.1632 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 16:40:22.1632 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 16:40:22.1986 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 16:40:22.2237 Info Configuration initialized.
+2020-12-24 16:40:22.2237 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 16:41:52.8594 Info Message Template Auto Format enabled
+2020-12-24 16:41:52.9302 Info Adding target FileTarget(Name=allfile)
+2020-12-24 16:41:52.9302 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 16:41:52.9302 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 16:41:52.9663 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 16:41:52.9919 Info Configuration initialized.
+2020-12-24 16:41:52.9919 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 16:47:54.4441 Info Message Template Auto Format enabled
+2020-12-24 16:47:54.5149 Info Adding target FileTarget(Name=allfile)
+2020-12-24 16:47:54.5149 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 16:47:54.5149 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 16:47:54.5526 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 16:47:54.5786 Info Configuration initialized.
+2020-12-24 16:47:54.5786 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 17:11:31.8307 Info Message Template Auto Format enabled
+2020-12-24 17:11:31.9018 Info Adding target FileTarget(Name=allfile)
+2020-12-24 17:11:31.9056 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 17:11:31.9056 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 17:11:31.9493 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 17:11:31.9829 Info Configuration initialized.
+2020-12-24 17:11:31.9829 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 17:16:03.9045 Info Message Template Auto Format enabled
+2020-12-24 17:16:03.9735 Info Adding target FileTarget(Name=allfile)
+2020-12-24 17:16:03.9735 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 17:16:03.9735 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 17:16:04.0103 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 17:16:04.0353 Info Configuration initialized.
+2020-12-24 17:16:04.0353 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-24 18:54:48.4056 Info Message Template Auto Format enabled
+2020-12-24 18:54:48.4768 Info Adding target FileTarget(Name=allfile)
+2020-12-24 18:54:48.4768 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-24 18:54:48.4768 Info Adding target NullTarget(Name=blackhole)
+2020-12-24 18:54:48.5122 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-24 18:54:48.5371 Info Configuration initialized.
+2020-12-24 18:54:48.5371 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2020-12-28 07:48:51.9002 Info Message Template Auto Format enabled
+2020-12-28 07:48:51.9692 Info Adding target FileTarget(Name=allfile)
+2020-12-28 07:48:51.9692 Info Adding target FileTarget(Name=ownFile-web)
+2020-12-28 07:48:51.9692 Info Adding target NullTarget(Name=blackhole)
+2020-12-28 07:48:52.0082 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2020-12-28 07:48:52.0331 Info Configuration initialized.
+2020-12-28 07:48:52.0331 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2021-01-05 19:06:09.6334 Info Message Template Auto Format enabled
+2021-01-05 19:06:09.7210 Info Adding target FileTarget(Name=allfile)
+2021-01-05 19:06:09.7210 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-05 19:06:09.7210 Info Adding target NullTarget(Name=blackhole)
+2021-01-05 19:06:09.7648 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-05 19:06:09.7968 Info Configuration initialized.
+2021-01-05 19:06:09.7968 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2021-01-05 19:11:24.2012 Info Message Template Auto Format enabled
+2021-01-05 19:11:24.2896 Info Adding target FileTarget(Name=allfile)
+2021-01-05 19:11:24.2927 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-05 19:11:24.2927 Info Adding target NullTarget(Name=blackhole)
+2021-01-05 19:11:24.3365 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-05 19:11:24.3722 Info Configuration initialized.
+2021-01-05 19:11:24.3722 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2021-01-05 19:12:33.7111 Info Message Template Auto Format enabled
+2021-01-05 19:12:33.7973 Info Adding target FileTarget(Name=allfile)
+2021-01-05 19:12:33.7973 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-05 19:12:33.7973 Info Adding target NullTarget(Name=blackhole)
+2021-01-05 19:12:33.8427 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-05 19:12:33.8741 Info Configuration initialized.
+2021-01-05 19:12:33.8741 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.2.11786. Product version: 4.7.2+024896f64b840a743d3fd89e29c2186681e7795f. GlobalAssemblyCache: False
+2021-01-07 18:10:58.6176 Info Message Template Auto Format enabled
+2021-01-07 18:10:58.6992 Info Adding target FileTarget(Name=allfile)
+2021-01-07 18:10:58.7025 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-07 18:10:58.7025 Info Adding target NullTarget(Name=blackhole)
+2021-01-07 18:10:58.7400 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\net5.0\NLog.config
+2021-01-07 18:10:58.7687 Info Configuration initialized.
+2021-01-07 18:10:58.7687 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-08 22:31:34.2622 Info Message Template Auto Format enabled
+2021-01-08 22:31:34.3564 Info Adding target FileTarget(Name=allfile)
+2021-01-08 22:31:34.3564 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-08 22:31:34.3564 Info Adding target NullTarget(Name=blackhole)
+2021-01-08 22:31:34.4226 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-08 22:31:34.4549 Info Configuration initialized.
+2021-01-08 22:31:34.4549 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-09 17:16:00.2060 Info Message Template Auto Format enabled
+2021-01-09 17:16:00.2923 Info Adding target FileTarget(Name=allfile)
+2021-01-09 17:16:00.2923 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-09 17:16:00.2975 Info Adding target NullTarget(Name=blackhole)
+2021-01-09 17:16:00.3375 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-09 17:16:00.3698 Info Configuration initialized.
+2021-01-09 17:16:00.3698 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-09 17:17:01.6524 Info Message Template Auto Format enabled
+2021-01-09 17:17:01.7432 Info Adding target FileTarget(Name=allfile)
+2021-01-09 17:17:01.7432 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-09 17:17:01.7505 Info Adding target NullTarget(Name=blackhole)
+2021-01-09 17:17:01.8108 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-09 17:17:01.8580 Info Configuration initialized.
+2021-01-09 17:17:01.8580 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 15:48:19.8100 Info Message Template Auto Format enabled
+2021-01-21 15:48:19.8969 Info Adding target FileTarget(Name=allfile)
+2021-01-21 15:48:19.8969 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 15:48:19.8969 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 15:48:19.9408 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 15:48:19.9789 Info Configuration initialized.
+2021-01-21 15:48:19.9789 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 16:16:52.8059 Info Message Template Auto Format enabled
+2021-01-21 16:16:52.8777 Info Adding target FileTarget(Name=allfile)
+2021-01-21 16:16:52.8777 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 16:16:52.8777 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 16:16:52.9154 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 16:16:52.9431 Info Configuration initialized.
+2021-01-21 16:16:52.9431 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 16:18:52.4645 Info Message Template Auto Format enabled
+2021-01-21 16:18:52.5329 Info Adding target FileTarget(Name=allfile)
+2021-01-21 16:18:52.5329 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 16:18:52.5329 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 16:18:52.5687 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 16:18:52.5941 Info Configuration initialized.
+2021-01-21 16:18:52.5953 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 16:53:48.4756 Info Message Template Auto Format enabled
+2021-01-21 16:53:48.5596 Info Adding target FileTarget(Name=allfile)
+2021-01-21 16:53:48.5596 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 16:53:48.5596 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 16:53:48.6034 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 16:53:48.6349 Info Configuration initialized.
+2021-01-21 16:53:48.6349 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 17:03:13.2216 Info Message Template Auto Format enabled
+2021-01-21 17:03:13.3149 Info Adding target FileTarget(Name=allfile)
+2021-01-21 17:03:13.3149 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 17:03:13.3149 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 17:03:13.3584 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 17:03:13.3888 Info Configuration initialized.
+2021-01-21 17:03:13.3888 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 17:13:10.0750 Info Message Template Auto Format enabled
+2021-01-21 17:13:10.1647 Info Adding target FileTarget(Name=allfile)
+2021-01-21 17:13:10.1647 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 17:13:10.1647 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 17:13:10.2061 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 17:13:10.2355 Info Configuration initialized.
+2021-01-21 17:13:10.2366 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-21 17:48:44.7972 Info Message Template Auto Format enabled
+2021-01-21 17:48:44.8812 Info Adding target FileTarget(Name=allfile)
+2021-01-21 17:48:44.8812 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-21 17:48:44.8812 Info Adding target NullTarget(Name=blackhole)
+2021-01-21 17:48:44.9253 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-21 17:48:44.9648 Info Configuration initialized.
+2021-01-21 17:48:44.9648 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-22 16:21:09.5989 Info Message Template Auto Format enabled
+2021-01-22 16:21:09.6720 Info Adding target FileTarget(Name=allfile)
+2021-01-22 16:21:09.6720 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-22 16:21:09.6720 Info Adding target NullTarget(Name=blackhole)
+2021-01-22 16:21:09.7099 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-22 16:21:09.7395 Info Configuration initialized.
+2021-01-22 16:21:09.7409 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-01-22 16:23:29.3966 Info Message Template Auto Format enabled
+2021-01-22 16:23:29.4674 Info Adding target FileTarget(Name=allfile)
+2021-01-22 16:23:29.4674 Info Adding target FileTarget(Name=ownFile-web)
+2021-01-22 16:23:29.4674 Info Adding target NullTarget(Name=blackhole)
+2021-01-22 16:23:29.5026 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-01-22 16:23:29.5342 Info Configuration initialized.
+2021-01-22 16:23:29.5342 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 11:32:13.1778 Info Message Template Auto Format enabled
+2021-02-23 11:32:13.2460 Info Adding target FileTarget(Name=allfile)
+2021-02-23 11:32:13.2460 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 11:32:13.2496 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 11:32:13.2823 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 11:32:13.3077 Info Configuration initialized.
+2021-02-23 11:32:13.3077 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 11:32:35.3803 Info Message Template Auto Format enabled
+2021-02-23 11:32:35.4854 Info Adding target FileTarget(Name=allfile)
+2021-02-23 11:32:35.4854 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 11:32:35.4854 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 11:32:35.5304 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 11:32:35.5668 Info Configuration initialized.
+2021-02-23 11:32:35.5668 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 12:09:37.6809 Info Message Template Auto Format enabled
+2021-02-23 12:09:37.7927 Info Adding target FileTarget(Name=allfile)
+2021-02-23 12:09:37.7971 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 12:09:37.7971 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 12:09:37.8408 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 12:09:37.8732 Info Configuration initialized.
+2021-02-23 12:09:37.8751 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 12:56:45.0373 Info Message Template Auto Format enabled
+2021-02-23 12:56:45.1333 Info Adding target FileTarget(Name=allfile)
+2021-02-23 12:56:45.1333 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 12:56:45.1400 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 12:56:45.1804 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 12:56:45.2055 Info Configuration initialized.
+2021-02-23 12:56:45.2055 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 13:11:09.7183 Info Message Template Auto Format enabled
+2021-02-23 13:11:09.7883 Info Adding target FileTarget(Name=allfile)
+2021-02-23 13:11:09.7883 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 13:11:09.7883 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 13:11:09.8257 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 13:11:09.8579 Info Configuration initialized.
+2021-02-23 13:11:09.8591 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 13:55:16.8648 Info Message Template Auto Format enabled
+2021-02-23 13:55:16.9009 Info Adding target FileTarget(Name=allfile)
+2021-02-23 13:55:16.9009 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 13:55:16.9009 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 13:55:16.9200 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\协议目录\微信720\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 13:55:16.9327 Info Configuration initialized.
+2021-02-23 13:55:16.9327 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 13:59:49.5174 Info Message Template Auto Format enabled
+2021-02-23 13:59:49.5516 Info Adding target FileTarget(Name=allfile)
+2021-02-23 13:59:49.5516 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 13:59:49.5516 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 13:59:49.5704 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\协议目录\微信720\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 13:59:49.5827 Info Configuration initialized.
+2021-02-23 13:59:49.5827 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-23 14:04:55.6010 Info Message Template Auto Format enabled
+2021-02-23 14:04:55.6360 Info Adding target FileTarget(Name=allfile)
+2021-02-23 14:04:55.6360 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-23 14:04:55.6360 Info Adding target NullTarget(Name=blackhole)
+2021-02-23 14:04:55.6562 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\协议目录\微信720\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-23 14:04:55.6680 Info Configuration initialized.
+2021-02-23 14:04:55.6680 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 12:44:35.1881 Info Message Template Auto Format enabled
+2021-02-27 12:44:35.2198 Info Adding target FileTarget(Name=allfile)
+2021-02-27 12:44:35.2198 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 12:44:35.2198 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 12:44:35.2368 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\C#\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 12:44:35.2487 Info Configuration initialized.
+2021-02-27 12:44:35.2487 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 12:45:09.5743 Info Message Template Auto Format enabled
+2021-02-27 12:45:09.6026 Info Adding target FileTarget(Name=allfile)
+2021-02-27 12:45:09.6026 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 12:45:09.6026 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 12:45:09.6177 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\C#\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 12:45:09.6283 Info Configuration initialized.
+2021-02-27 12:45:09.6283 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 12:59:32.7403 Info Message Template Auto Format enabled
+2021-02-27 12:59:32.7688 Info Adding target FileTarget(Name=allfile)
+2021-02-27 12:59:32.7688 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 12:59:32.7688 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 12:59:32.7841 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\C#\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 12:59:32.7951 Info Configuration initialized.
+2021-02-27 12:59:32.7951 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 13:10:55.0133 Info Message Template Auto Format enabled
+2021-02-27 13:10:55.0428 Info Adding target FileTarget(Name=allfile)
+2021-02-27 13:10:55.0428 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 13:10:55.0428 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 13:10:55.0583 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\C#\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 13:10:55.0684 Info Configuration initialized.
+2021-02-27 13:10:55.0684 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 13:13:15.8440 Info Message Template Auto Format enabled
+2021-02-27 13:13:15.8729 Info Adding target FileTarget(Name=allfile)
+2021-02-27 13:13:15.8738 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 13:13:15.8738 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 13:13:15.8890 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\C#\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 13:13:15.8890 Info Configuration initialized.
+2021-02-27 13:13:15.8890 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-02-27 15:08:05.6467 Info Message Template Auto Format enabled
+2021-02-27 15:08:05.7926 Info Adding target FileTarget(Name=allfile)
+2021-02-27 15:08:05.8015 Info Adding target FileTarget(Name=ownFile-web)
+2021-02-27 15:08:05.8015 Info Adding target NullTarget(Name=blackhole)
+2021-02-27 15:08:05.8813 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=D:\qq\2656118396\FileRecv\WeChat.Core普通版0223(1)\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-02-27 15:08:05.9431 Info Configuration initialized.
+2021-02-27 15:08:05.9431 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-03-12 06:59:40.3633 Info Message Template Auto Format enabled
+2021-03-12 06:59:40.4702 Info Adding target FileTarget(Name=allfile)
+2021-03-12 06:59:40.4772 Info Adding target FileTarget(Name=ownFile-web)
+2021-03-12 06:59:40.4772 Info Adding target NullTarget(Name=blackhole)
+2021-03-12 06:59:40.5116 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=E:\WeChat.Core普通版0223\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-03-12 06:59:40.5367 Info Configuration initialized.
+2021-03-12 06:59:40.5367 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-03-12 07:04:40.9522 Info AppDomain Shutting down. Logger closing...
+2021-03-12 07:04:41.2659 Info Logger has been shut down.
+2021-07-16 15:36:50.1196 Info Message Template Auto Format enabled
+2021-07-16 15:36:50.1668 Info Adding target FileTarget(Name=allfile)
+2021-07-16 15:36:50.1668 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-16 15:36:50.1668 Info Adding target NullTarget(Name=blackhole)
+2021-07-16 15:36:50.2010 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=D:\天翼云盘下载\WeChat.Core716\WeChat.Core310\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-07-16 15:36:50.2406 Info Configuration initialized.
+2021-07-16 15:36:50.2406 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-16 15:54:00.9390 Info Message Template Auto Format enabled
+2021-07-16 15:54:00.9782 Info Adding target FileTarget(Name=allfile)
+2021-07-16 15:54:00.9782 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-16 15:54:00.9782 Info Adding target NullTarget(Name=blackhole)
+2021-07-16 15:54:00.9966 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=D:\天翼云盘下载\WeChat.Core716\WeChat.Core310\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-07-16 15:54:01.0085 Info Configuration initialized.
+2021-07-16 15:54:01.0085 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-16 15:54:01.2000 Info AppDomain Shutting down. Logger closing...
+2021-07-16 15:54:01.2233 Info Logger has been shut down.
+2021-07-16 17:38:50.0721 Info Message Template Auto Format enabled
+2021-07-16 17:38:50.0721 Info AppDomain Shutting down. Logger closing...
+2021-07-16 17:38:50.1532 Info Adding target FileTarget(Name=allfile)
+2021-07-16 17:38:50.1532 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-16 17:38:50.1532 Info Adding target NullTarget(Name=blackhole)
+2021-07-16 17:38:50.1914 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\小木鱼\Desktop\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-07-16 17:38:50.2138 Info Configuration initialized.
+2021-07-16 17:38:50.2138 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-07-16 17:38:50.2428 Info Logger has been shut down.
+2021-07-16 17:39:10.2288 Info Message Template Auto Format enabled
+2021-07-16 17:39:10.3112 Info Adding target FileTarget(Name=allfile)
+2021-07-16 17:39:10.3112 Info Adding target FileTarget(Name=ownFile-web)
+2021-07-16 17:39:10.3202 Info Adding target NullTarget(Name=blackhole)
+2021-07-16 17:39:10.3695 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\小木鱼\Desktop\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-07-16 17:39:10.4080 Info Configuration initialized.
+2021-07-16 17:39:10.4080 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-10-19 22:09:24.0219 Info Message Template Auto Format enabled
+2021-10-19 22:09:24.1170 Info Adding target FileTarget(Name=allfile)
+2021-10-19 22:09:24.1196 Info Adding target FileTarget(Name=ownFile-web)
+2021-10-19 22:09:24.1196 Info Adding target NullTarget(Name=blackhole)
+2021-10-19 22:09:24.1554 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\Byboy\Downloads\WeChat.Core716(20210716173510)\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-10-19 22:09:24.1819 Info Configuration initialized.
+2021-10-19 22:09:24.1819 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-10-19 22:10:44.2024 Info Message Template Auto Format enabled
+2021-10-19 22:10:44.2749 Info Adding target FileTarget(Name=allfile)
+2021-10-19 22:10:44.2749 Info Adding target FileTarget(Name=ownFile-web)
+2021-10-19 22:10:44.2749 Info Adding target NullTarget(Name=blackhole)
+2021-10-19 22:10:44.3129 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\Byboy\Downloads\WeChat.Core716(20210716173510)\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-10-19 22:10:44.3387 Info Configuration initialized.
+2021-10-19 22:10:44.3387 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-10-19 22:11:36.6529 Info Message Template Auto Format enabled
+2021-10-19 22:11:36.7260 Info Adding target FileTarget(Name=allfile)
+2021-10-19 22:11:36.7286 Info Adding target FileTarget(Name=ownFile-web)
+2021-10-19 22:11:36.7286 Info Adding target NullTarget(Name=blackhole)
+2021-10-19 22:11:36.7648 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\Byboy\Downloads\WeChat.Core716(20210716173510)\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-10-19 22:11:36.7915 Info Configuration initialized.
+2021-10-19 22:11:36.7915 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False
+2021-10-19 22:13:12.5385 Info Message Template Auto Format enabled
+2021-10-19 22:13:12.6117 Info Adding target FileTarget(Name=allfile)
+2021-10-19 22:13:12.6117 Info Adding target FileTarget(Name=ownFile-web)
+2021-10-19 22:13:12.6117 Info Adding target NullTarget(Name=blackhole)
+2021-10-19 22:13:12.6502 Info Validating config: TargetNames=allfile, blackhole, ownFile-web, ConfigItems=57, FilePath=C:\Users\Byboy\Downloads\WeChat.Core716(20210716173510)\WeChat.Core716(20210716173510)\WeChat.Api\bin\Debug\netcoreapp3.1\NLog.config
+2021-10-19 22:13:12.6769 Info Configuration initialized.
+2021-10-19 22:13:12.6769 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.7.6.12219. Product version: 4.7.6+e16065c1f397a4b0a5beed10d2e79bbedc1fd1e6. GlobalAssemblyCache: False

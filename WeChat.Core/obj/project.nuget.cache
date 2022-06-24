@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "R7Ce7imYWyernDGLi2nvJ/HViYVpv6355OL9cgulzQCmexWIIUKWV3hwhf825SKTUeXut1FW+pX+g9VjXCCfYA==",
+  "success": true,
+  "projectFilePath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Byboy\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\portable.bouncycastle\\1.8.8\\portable.bouncycastle.1.8.8.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\protobuf-net\\3.0.52\\protobuf-net.3.0.52.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\protobuf-net.core\\3.0.52\\protobuf-net.core.3.0.52.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.private.servicemodel\\4.7.0\\system.private.servicemodel.4.7.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.reflection.dispatchproxy\\4.5.0\\system.reflection.dispatchproxy.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.cryptography.cng\\4.4.0\\system.security.cryptography.cng.4.4.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.cryptography.pkcs\\4.5.0\\system.security.cryptography.pkcs.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.cryptography.xml\\4.5.0\\system.security.cryptography.xml.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\Byboy\\.nuget\\packages\\system.servicemodel.primitives\\4.7.0\\system.servicemodel.primitives.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

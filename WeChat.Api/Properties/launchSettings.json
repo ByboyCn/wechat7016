@@ -1,0 +1,38 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:62110",
+      "sslPort": 0
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "WeChat.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "nativeDebugging": false,
+      "applicationUrl": "http://127.0.0.1:81"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "http://+:80",
+        "ASPNETCORE_HTTPS_PORT": "0"
+      },
+      "httpPort": 62111,
+      "useSSL": true,
+      "sslPort": 0
+    }
+  }
+}

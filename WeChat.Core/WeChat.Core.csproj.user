@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Functions\WXClient.Cdn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Chatroom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Contact.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Extension.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Favor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Login.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Message.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Payment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Register.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.Sns.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Functions\WXClient.User.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Modules\WXClient\WXWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WXApp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WXCore.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WXQrcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
