@@ -66,7 +66,7 @@ namespace WeChat.Api.Controllers
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        [HttpPost(nameof(WXHeartBeat))]
+        [HttpPost(nameof(GetDeviceToken))]
         public async Task<ActionResult<RestfulData<object>>> GetDeviceToken([FromBody] BaseDto dto)
         {
             return await Business<object>(dto, async (client, result) =>
