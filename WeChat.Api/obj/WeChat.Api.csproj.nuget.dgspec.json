@@ -1,17 +1,92 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WeChat.Core716(20210716173510)\\WeChat.Api\\WeChat.Api.csproj": {}
+    "H:\\wechat7016\\WeChat.Api\\WeChat.Api.csproj": {}
   },
   "projects": {
-    "D:\\WeChat.Core716(20210716173510)\\WeChat.Api\\WeChat.Api.csproj": {
+    "H:\\wechat7016\\MG.gRPCClient\\MG.gRPCClient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\wechat7016\\MG.gRPCClient\\MG.gRPCClient.csproj",
+        "projectName": "MG.gRPCClient",
+        "projectPath": "H:\\wechat7016\\MG.gRPCClient\\MG.gRPCClient.csproj",
+        "packagesPath": "C:\\Users\\Byboy\\.nuget\\packages\\",
+        "outputPath": "H:\\wechat7016\\MG.gRPCClient\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Byboy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.21.3, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.47.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.47.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "H:\\wechat7016\\WeChat.Api\\WeChat.Api.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "D:\\WeChat.Core716(20210716173510)\\WeChat.Api\\WeChat.Api.csproj",
+        "projectUniqueName": "H:\\wechat7016\\WeChat.Api\\WeChat.Api.csproj",
         "projectName": "WeChat.Api",
-        "projectPath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Api\\WeChat.Api.csproj",
+        "projectPath": "H:\\wechat7016\\WeChat.Api\\WeChat.Api.csproj",
         "packagesPath": "C:\\Users\\Byboy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Api\\obj\\",
+        "outputPath": "H:\\wechat7016\\WeChat.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,15 +101,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://114.215.180.213:8081/repository/nuget-hosted/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj": {
-                "projectPath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj"
+              "H:\\wechat7016\\WeChat.Core\\WeChat.Core.csproj": {
+                "projectPath": "H:\\wechat7016\\WeChat.Core\\WeChat.Core.csproj"
               }
             }
           }
@@ -100,7 +174,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -112,18 +187,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj": {
+    "H:\\wechat7016\\WeChat.Core\\WeChat.Core.csproj": {
       "version": "1.1.0",
       "restore": {
-        "projectUniqueName": "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj",
+        "projectUniqueName": "H:\\wechat7016\\WeChat.Core\\WeChat.Core.csproj",
         "projectName": "WeChat.Core",
-        "projectPath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\WeChat.Core.csproj",
+        "projectPath": "H:\\wechat7016\\WeChat.Core\\WeChat.Core.csproj",
         "packagesPath": "C:\\Users\\Byboy\\.nuget\\packages\\",
-        "outputPath": "D:\\WeChat.Core716(20210716173510)\\WeChat.Core\\obj\\",
+        "outputPath": "H:\\wechat7016\\WeChat.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -138,13 +213,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://114.215.180.213:8081/repository/nuget-hosted/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "H:\\wechat7016\\MG.gRPCClient\\MG.gRPCClient.csproj": {
+                "projectPath": "H:\\wechat7016\\MG.gRPCClient\\MG.gRPCClient.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -180,7 +258,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -189,7 +268,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
