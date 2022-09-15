@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using MG.gRPC;
+using MG.gRPCClient;
+using System.IO;
 using System.Reflection;
 
 namespace System
@@ -39,10 +41,12 @@ namespace System
         /// </summary>
         /// <param name="body">包体</param>
         /// <returns></returns>
-        public static int SignRqt(this byte[] body)
+        public static uint SignRqt(this byte[] body)
         {
-            var key = "6a664d5d537c253f736e48273a295e4f";
-            return SignRqtBufByAutoChosenKey(body.MD5().ToString(16, 2).ToLower(), key.ToByteArray(16, 2));
+            var client = Client.GetClient();
+            var rqtx = new Rqtx.RqtxClient(client);
+            var reply1 = rqtx.GetRqtx(new RqtRequest { DateMd5 = body.MD5().ToString(16, 2).ToLower(), IsIos = false });
+            return reply1.Result;
         }
     }
 }

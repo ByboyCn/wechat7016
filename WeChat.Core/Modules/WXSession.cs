@@ -86,7 +86,7 @@ namespace WeChat.Core
             var pubOperate1 = new PackOperate()
                 .SetDwordToken(
                     new PackOperate()
-                        .SetDword (1)
+                        .SetDword (5)
                         .SetWordToken(ecdh1.PublicKey)
                 );
 
@@ -94,7 +94,7 @@ namespace WeChat.Core
             var pubOperate2 = new PackOperate()
                 .SetDwordToken(
                     new PackOperate()
-                        .SetDword(2)
+                        .SetDword(6)
                         .SetWordToken(ecdh2.PublicKey)
                 );
 
@@ -127,7 +127,7 @@ namespace WeChat.Core
             }
 
             var operate = new PackOperate()
-                .SetBytes(new byte[] { 0x01,0x03,0xF1 })
+                .SetBytes(new byte[] { 0x01,0x04,0xF1 })
                 .SetBytes(adap)
                 .SetBytes(buffer)
                 .SetDword(DateTime.UtcNow.ToTimeStamp());
@@ -142,7 +142,7 @@ namespace WeChat.Core
             operate.SetDwordToken(keys);
 
             hash = new PackOperate().SetDwordToken(operate.Array).Array;
-            request.Write(new byte[] { 0x16,0xf1,0x03 });
+            request.Write(new byte[] { 0x16,0xf1,0x04 });
             request.Write((ushort)hash.Length,Endian.Big);
             request.Write(hash);
             return request.ToArray();
@@ -200,7 +200,7 @@ namespace WeChat.Core
             var finish = MMtlsDecrypt(psk[3], ServerSequence++, dectypt_key, decrypt_iv);
             if (finish == null) { return result; }
             var finishhash = hanshake256hashpart3.HMACSHA256("client finished".ToBytes().Expand(seckey, 32));
-            result = MMtlsEncrypt(new byte[] { 0x00, 0x00, 0x00, 0x23, 0x14, 0x00, 0x20 }.Concat(finishhash).ToArray(), ClientSequence++, encrypt_key, encrypt_iv, new byte[] { 0x16, 0xf1, 0x03 });
+            result = MMtlsEncrypt(new byte[] { 0x00, 0x00, 0x00, 0x23, 0x14, 0x00, 0x20 }.Concat(finishhash).ToArray(), ClientSequence++, encrypt_key, encrypt_iv, new byte[] { 0x16, 0xf1, 0x04 });
             #endregion
 
             #region 第五步：保存KEY
@@ -225,7 +225,7 @@ namespace WeChat.Core
         public byte[] LongLinkPack(byte[] data)
         {
             if (!Initialized) return data;
-            return MMtlsEncrypt(data, ClientSequence++, LongLinkEncryptKey, LongLinkEncryptIV, new byte[] { 0x17, 0xf1, 0x03 });
+            return MMtlsEncrypt(data, ClientSequence++, LongLinkEncryptKey, LongLinkEncryptIV, new byte[] { 0x17, 0xf1, 0x04 });
         }
         public byte[] LongLinkUnPack(byte[] data)
         {
@@ -263,7 +263,7 @@ namespace WeChat.Core
             packet1 = packet1.Length.ToByteArray(Endian.Big).Concat(packet1).ToArray();                     // 写入长度
             packet1 = ticket.ToByteArray(Endian.Big).Concat(packet1).ToArray();                             // 写入时间戳
             packet1 = new Random(Guid.NewGuid().GetHashCode()).NextBytes(32).Concat(packet1).ToArray();     // 写入随机数
-            packet1 = new byte[] { 0x01, 0x03, 0xf1, 0x01, 0x00, 0xa8 }.Concat(packet1).ToArray();          // 写入头部
+            packet1 = new byte[] { 0x01, 0x04, 0xf1, 0x01, 0x00, 0xa8 }.Concat(packet1).ToArray();          // 写入头部
             packet1 = packet1.Length.ToByteArray(Endian.Big).Concat(packet1).ToArray();                     // 写入长度
 
             byte[] hkdfret = "early data key expansion".ToBytes().Concat(packet1.SHA256()).ToArray().Expand(PskAccessKey, 28);
@@ -271,7 +271,7 @@ namespace WeChat.Core
             byte[] encrypt_iv = hkdfret.Skip(16).ToArray();
 
             shortlinkhash.Write(packet1);
-            result.Write(new byte[] { 0x19, 0xf1, 0x03 });
+            result.Write(new byte[] { 0x19, 0xf1, 0x04 });
             result.Write((ushort)packet1.Length, Endian.Big);
             result.Write(packet1);                                                                          // 写入第一个包
 
@@ -284,15 +284,15 @@ namespace WeChat.Core
             packet2 = packet2.Length.ToByteArray(Endian.Big).Concat(packet2).ToArray();                     // 写入长度
 
             shortlinkhash.Write(packet2);
-            packet2 = MMtlsEncrypt(packet2, 1, encrypt_key, encrypt_iv, new byte[] { 0x19, 0xf1, 0x03 });
+            packet2 = MMtlsEncrypt(packet2, 1, encrypt_key, encrypt_iv, new byte[] { 0x19, 0xf1, 0x04 });
             result.Write(packet2);                                                                          // 写入第二个包
 
-            var packet3 = MMtlsEncrypt(data, 2, encrypt_key, encrypt_iv, new byte[] { 0x17, 0xf1, 0x03 });
+            var packet3 = MMtlsEncrypt(data, 2, encrypt_key, encrypt_iv, new byte[] { 0x17, 0xf1, 0x04 });
             result.Write(packet3);                                                                          // 写入第三个包业务包
 
             var packet4 = new byte[] { 0x00, 0x01, 0x01 };
             packet4 = packet4.Length.ToByteArray(Endian.Big).Concat(packet4).ToArray();                     // 写入长度
-            packet4 = MMtlsEncrypt(packet4, 3, encrypt_key, encrypt_iv, new byte[] { 0x15, 0xf1, 0x03 });
+            packet4 = MMtlsEncrypt(packet4, 3, encrypt_key, encrypt_iv, new byte[] { 0x15, 0xf1, 0x04 });
             result.Write(packet4);
             hash = shortlinkhash.ToArray();
             return result.ToArray();
@@ -347,7 +347,7 @@ namespace WeChat.Core
         {
             var offset = 0;
             var result = new List<byte[]>();
-            while (buffer.Count - offset > 5 && buffer.Array[offset + 1] == 0xf1 && buffer.Array[offset + 2] == 0x03)
+            while (buffer.Count - offset > 5 && buffer.Array[offset + 1] == 0xf1 && buffer.Array[offset + 2] == 0x04)
             {
                 var datalen = buffer.Array.Skip(offset + 3).Take(2).ToArray().GetUInt16(Endian.Big);
                 if (buffer.Count - offset < datalen + 5) { break; }

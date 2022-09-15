@@ -3,6 +3,9 @@ using System.Threading.Tasks;
 using WeChat.Core.Protocol;
 using WeChat.Core.Protocol.Protos;
 using WeChat.Core.Protocol.Protos.V2;
+using WeChat.Pb.Entites;
+using XMS.WeChat.Core.Libraries.WCAes;
+using XMS.WeChat.Core.Versions;
 
 namespace WeChat.Core
 {
@@ -14,17 +17,11 @@ namespace WeChat.Core
         /// <returns></returns>
         Task<Protocol.Protos.HeartBeatResponse> WXHeartBeat();
         /// <summary>
-        /// 上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 23XML
+        /// 获取deviceToken
         /// </summary>
         /// <returns></returns>
-        Task<ReportClientCheckResponse> WXReportClientCheck();
-        /// <summary>
-        /// 安全上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 24PB
-        /// </summary>
-        /// <returns></returns>
-        Task<ReportClientCheckResponse> WXSecReportClientCheck();
+        Task<TrustResp> WXGetDeviceToken();
+
     }
 
     public partial class WXApp
@@ -52,66 +49,30 @@ namespace WeChat.Core
                 Scene = 0
             }.SerializeToProtoBuf(), WXCGIUrl.micromsg_bin_heartbeat);
         }
-
-        /// <summary>
-        /// 上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 23XML
-        /// </summary>
-        /// <returns></returns>
-        public virtual async Task<ReportClientCheckResponse> WXReportClientCheck()
+        public virtual async Task<TrustResp> WXGetDeviceToken()
         {
-            if (_Cache.ReportCcdContext == 0) { return null; }
-            return await Request<ReportClientCheckResponse>(new ReportClientCheckRequest()
+                var data =CheckClientData.GetZTData(_Environment.WeChatDataId, _Environment.WeChatOsType, _Environment.Device.Model, _Environment.Device.CpuCore,
+                _Environment.Device.IPhoneVersion, _Environment.DeviceName, _8026.PlistVersion, _Environment.WeChatOsType, _8026.PlistVersion,
+               _8026.Md5OfMachoHeader, _8026.AppUUID, _8026.InstallTimes, _Environment.DeviceImei, _Cache.DeviceToken, _8026.StrVersion,
+               _Cache.SoftConfig, _Cache.SoftData);
+            var result = await Request<TrustResp>(new FPFresh()
             {
-                baseRequest = new Protocol.Protos.V2.BaseRequest
+                BaseRequest = new Protocol.Protos.BaseRequest
                 {
-                    clientVersion = _Environment.Terminal.GetWeChatVersion(),
-                    devicelId = _Environment.WeChatDataId.ToByteArray(16, 2),
-                    osType = _Environment.WeChatOsType,
-                    sessionKey = _Cache.SessionKey,
-                    scene = _Cache.Scene,
-                    uin = _Cache.Uin
+                    ClientVersion = _Environment.Terminal.GetWeChatVersion(),
+                    DeviceID = _Environment.WeChatDataId.ToByteArray(16, 2),
+                    DeviceType = _Environment.WeChatOsType.ToBytes(),
+                    SessionKey = _Cache.SessionKey,
+                    Scene = (uint)(_Cache.Scene),
+                    Uin = _Cache.Uin
                 },
-                clientCheckData = new DeviceRunningInfo23
-                {
-                    Version = "00000003",
-                    Encrypted = 1,
-                    Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataXml())
-                }.SerializeToProtoBuf(),
-                context = _Cache.ReportCcdContext
-            }.SerializeToProtoBuf(), WXCGIUrl.micromsg_bin_reportclientcheck);
+                 ZTData = data
+            }.SerializeToProtoBuf(), WXCGIUrl.micromsg_bin_fpinit);
+            _Cache.DeviceToken = result.TrustResponseData.DeviceToken;
+            _Cache.SoftConfig = result.TrustResponseData.SoftData.SoftConfig;
+            _Cache.SoftData = result.TrustResponseData.SoftData.SoftData;
+            return result;
         }
 
-        /// <summary>
-        /// 安全上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 24PB
-        /// </summary>
-        /// <returns></returns>
-        public virtual async Task<ReportClientCheckResponse> WXSecReportClientCheck()
-        {
-            if (_Cache.ReportCcdContext == 0) { return null; }
-            return await Request<ReportClientCheckResponse>(new ReportClientCheckRequest()
-            {
-                baseRequest = new Protocol.Protos.V2.BaseRequest
-                {
-                    clientVersion = _Environment.Terminal.GetWeChatVersion(),
-                    devicelId = _Environment.WeChatDataId.ToByteArray(16, 2),
-                    osType = _Environment.WeChatOsType,
-                    sessionKey = _Cache.SessionKey,
-                    scene = _Cache.Scene,
-                    uin = _Cache.Uin
-                },
-                clientCheckData = new DeviceRunningInfo24
-                {
-                    Version = "00000003",
-                    Encrypted = 1,
-                    Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataPB()),
-                    Timestamp = (uint)DateTime.UtcNow.ToTimeStamp(),
-                    Optype = 5,
-                    Uin = 0
-                }.SerializeToProtoBuf(),
-                context = _Cache.ReportCcdContext
-            }.SerializeToProtoBuf(), WXCGIUrl.micromsg_bin_reportclientcheck);
-        }
     }
 }

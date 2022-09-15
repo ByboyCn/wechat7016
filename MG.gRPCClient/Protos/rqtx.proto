@@ -1,0 +1,20 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "MG.gRPC";
+
+package rqtx;
+
+
+service Rqtx {
+  rpc GetRqtx(RqtRequest) returns (RqtxResponse);
+}
+
+message RqtRequest {
+  string dateMd5= 1;
+  bool isIos=2;
+}
+
+
+message RqtxResponse {
+	uint32 result = 1;
+}

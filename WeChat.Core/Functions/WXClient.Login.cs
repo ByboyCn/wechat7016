@@ -1,3 +1,4 @@
+using MG.gRPC;
 using System;
 using System.IO;
 using System.Linq;
@@ -6,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WeChat.Core.Protocol;
 using WeChat.Core.Protocol.Protos.V2;
+using XMS.WeChat.Core.Libraries.WCAes;
+using XMS.WeChat.Core.Versions;
 
 namespace WeChat.Core
 {
@@ -19,15 +22,7 @@ namespace WeChat.Core
         /// <param name="max_sync_key"></param>
         /// <returns></returns>
         Task<Protocol.Protos.NewInitResponse> WXNewInit(byte[] current_sync_key = null, byte[] max_sync_key = null);
-        /// <summary>
-        /// 人工登录（23XML）
-        /// </summary>
-        /// <param name="channel">通道</param>
-        /// <param name="username">用户名</param>
-        /// <param name="password">密码</param>
-        /// <param name="slider">过滑块</param>
-        /// <returns></returns>
-        Task<UnifyAuthResponse> WXManualAuth(WXLoginChannel channel, string username, string password, bool slider = true);
+
         /// <summary>
         /// 安全人工登录（24PB）
         /// </summary>
@@ -37,11 +32,7 @@ namespace WeChat.Core
         /// <param name="slider">过滑块</param>
         /// <returns></returns>
         Task<UnifyAuthResponse> WXSecManualAuth(WXLoginChannel channel, string username, string password, bool slider = true);
-        /// <summary>
-        /// 自动登录/二次登录（23XML）
-        /// </summary>
-        /// <returns></returns>
-        Task<UnifyAuthResponse> WXAutoAuth();
+
         /// <summary>
         /// 安全自动登录/二次登录（24PB）
         /// </summary>
@@ -186,169 +177,6 @@ namespace WeChat.Core
         }
 
         /// <summary>
-        /// 人工登录（23XML）
-        /// </summary>
-        /// <param name="channel">通道</param>
-        /// <param name="username">用户名</param>
-        /// <param name="password">密码</param>
-        /// <param name="slider">过滑块</param>
-        /// <returns></returns>
-        public virtual async Task<UnifyAuthResponse> WXManualAuth(WXLoginChannel channel, string username, string password, bool slider = true)
-        {
-            if (!TestProxy(WXCGIUrl.micromsg_bin_manualauth))
-            {
-                _Status = new WXStatus()
-                {
-                    Code = 2,
-                    Message = "登录失败[代理超时]"
-                };
-                return null;
-            }
-            _Status = default;
-            var result = default(UnifyAuthResponse);
-            var retry = 3;
-            var ecdh = new ECKeyPair(Curve.SecP224r1);
-            var ccd = new DeviceRunningInfo23
-            {
-                Version = "00000003",
-                Encrypted = 1,
-                Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataXml()),
-            }.SerializeToProtoBuf();
-
-            var pubkey = ecdh.PublicKey;
-            var pb = new ManualAuthRequest
-            {
-                rsaRequest = new ManualAuthRsaReqData()
-                {
-                    aes = new AesKey() { key = _Cache.SessionKey, len = (int)(_Cache.SessionKey?.Length) },
-                    ecdh = new Ecdh { ecdhkey = new EcdhKey { key = pubkey, len = (int)(pubkey?.Length) }, nid = 713 },
-                    password1 = channel == WXLoginChannel.Normal ? password.MD5() : password,
-                    password2 = channel == WXLoginChannel.Normal ? password.MD5() : password,
-                    userName = username
-                },
-                deviceRequest = new ManualAuthAesReqData()
-                {
-                    baseRequest = new BaseRequest
-                    {
-                        clientVersion = _Environment.Terminal.GetWeChatVersion(),
-                        devicelId = _Environment.WeChatDataId.ToByteArray(16, 2),
-                        osType = _Environment.WeChatOsType,
-                        sessionKey = _Cache.SessionKey,
-                        scene = 1,
-                        uin = _Cache.Uin
-                    },
-                    baseReqInfo = new BaseAuthReqInfo { },
-                    imei = _Environment.DeviceImei.ToByteArray(16, 2),
-                    softInfoXml = _Environment.WeChatXmlInfo,
-                    Builtinipseq = 0,
-                    clientSeqID = _Environment.DeviceImei + "-" + DateTime.Now.ToTimeStamp().ToString(),
-                    loginDeviceName = _Environment.DeviceName,
-                    deviceInfoXml = _Environment.Device.ToString(),
-                    language = "Zh",
-                    timeZone = "8.0",
-                    Channel = 0,
-                    Timestamp = DateTime.Now.ToTimeStamp(),
-                    deviceBrand = _Environment.DeviceBrand,
-                    realCountry = "cn",
-                    Bundleid = _Environment.WeChatBundleId,
-                    Inputtype = 2,
-                    Signature = _Environment.WeChatSignature,
-                    osType = _Environment.WeChatOsType,
-                    deviceModel = _Environment.Device.Model,
-                    Clientcheckdat = new SKBuiltinString_() { buffer = ccd, iLen = (uint)ccd.Length }
-                }
-            };
-            var pb_acount = pb.rsaRequest?.SerializeToProtoBuf();
-            var pb_device = pb.deviceRequest?.SerializeToProtoBuf();
-
-            var body = new byte[] { };
-            var rsa_verson = _Cache.Terminal.GetRsaVersion();
-            var rsa_acount = pb_acount.ZIPCompress().RSAEncrypt(rsa_verson.GetKey().ToByteArray(16, 2), rsa_verson.GetExponent());
-            var aes_device = pb_device.ZIPCompress().AESEncrypt(_Cache.SessionKey);
-            body = body.Concat(pb_acount.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(pb_device.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(rsa_acount.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(rsa_acount).ToArray();
-            body = body.Concat(aes_device).ToArray();
-            var package = Pack(body, (int)WXCGIUrl.micromsg_bin_manualauth, _Cache.Terminal.GetWeChatVersion().Code, false, body.Length, body.Length, 0, 7, (int)rsa_verson);
-            do
-            {
-                result = await Request<UnifyAuthResponse>(package, WXCGIUrl.micromsg_bin_manualauth);
-            } while ((result?.baseResponse?.ret == RetConst.MM_ERR_IDC_REDIRECT) && --retry > 0);
-            if (result == null)
-            {
-                _Status = new WXStatus()
-                {
-                    Code = 2,
-                    Message = "登录失败[网络异常/代理超时]"
-                };
-                return null;
-            }
-            if ((result?.baseResponse?.errMsg?.@string?.Contains("系统检测到环境存在异常") ?? false) == true && slider == true)
-            {
-                var sliderRes = await WXSliderOCR("2000000038");
-                var ticket = result?.baseResponse?.errMsg.@string.Substring("ticket=", 34);
-                string url1 = $"https://shminorshort.weixin.qq.com/security/readtemplate?t=login_verify_entrances/w_tcaptcha_ret&wechat_real_lang=zh_CN&aid=2000000038&clientype=1&lang=2052&apptype=undefined&captype=7&disturblevel=1&secticket={ticket}&ret=0&ticket={sliderRes.Ticket}&randstr={sliderRes.RandStr}";
-                HttpHelper http = new HttpHelper();
-                HttpItem item = new HttpItem()
-                {
-                    URL = url1,
-                    Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
-                };
-                HttpResult httpResult1 = http.GetHtml(item);
-                string url2 = url1.Replace("readtemplate", "secondauth") + "&step=8";
-                item = new HttpItem()
-                {
-                    URL = url2,
-                    Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-                    Referer = url1,
-                    Cookie = httpResult1.Cookie
-                };
-                http.GetHtml(item);
-                //return await WXManualAuth(channel, username, password, false);
-                retry = 3;
-                do
-                {
-                    result = await Request<UnifyAuthResponse>(package, WXCGIUrl.micromsg_bin_manualauth);
-                } while ((result?.baseResponse?.ret == RetConst.MM_ERR_IDC_REDIRECT) && --retry > 0);
-            }
-            result?.CallWhen(result?.baseResponse?.ret == RetConst.MM_OK, _ =>
-            {
-                _Cache.EcdhKey = ecdh.GetSharedKey(result.authParam.ecdh.ecdhkey.key);
-                _Cache.SessionKey = result.authParam.session.key.AESDecrypt(_Cache.EcdhKey.MD5());
-                _Profile.UserName = result.accountInfo.wxid;
-                _Profile.NickName = result.accountInfo.nickName;
-                _Profile.BindEmail = result.accountInfo.bindMail;
-                _Profile.BindMobile = result.accountInfo.bindMobile;
-                _Profile.Alias = result.accountInfo.Alias;
-                _Profile.Password = channel == WXLoginChannel.Normal ? password : "";
-                _Profile.PasswordMd5 = channel == WXLoginChannel.Normal ? password.MD5() : password;
-            });
-            result?.CallWhen(true, _ =>
-            {
-                _Status = new WXStatus
-                {
-                    Code = result?.baseResponse?.ret == RetConst.MM_OK ? 1 : (int)(result?.baseResponse?.ret ?? RetConst.MM_ERR_NOT),
-                    Message = result?.baseResponse?.ret == RetConst.MM_OK ? _Profile.ToJson() : result?.baseResponse?.errMsg.@string.Between("<Content><![CDATA[", "]]></Content>"),
-                    Url = result?.baseResponse?.ret == RetConst.MM_OK ? "" : result?.baseResponse?.errMsg.@string.Between("<Url><![CDATA[", "]]></Url>"),
-                    Ticket = result?.baseResponse?.ret == RetConst.MM_OK ? "" : result?.baseResponse?.errMsg.@string.Substring("ticket=", 34),
-                    LoginChannel = channel,
-                    LoginMode = WXLoginMode.Manual
-                };
-                if (_Status.Code == -1)
-                {
-                    _Status.Message = "登录失败[未登录/已退出]";
-                }
-                if (string.IsNullOrEmpty(_Status.Message))
-                {
-                    _Status.Code = 3;
-                    _Status.Message = "登录失败[实例环境异常]";
-                }
-            });
-            return result;
-        }
-
-        /// <summary>
         /// 安全人工登录（24PB）
         /// </summary>
         /// <param name="channel">通道</param>
@@ -371,24 +199,11 @@ namespace WeChat.Core
             var retry = 3;
             var result = default(UnifyAuthResponse);
             var ecdh = new ECKeyPair(Curve.SecP224r1);
-            var ccdata = new DeviceRunningInfo24
-            {
-                Version = "00000003",
-                Encrypted = 1,
-                Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataPB()),
-                Timestamp = (uint)(DateTime.UtcNow.ToTimeStamp()),
-                Optype = 5,
-                Uin = 0
-            }.SerializeToProtoBuf();
-            var devicetoken = new DeviceRunningInfo24
-            {
-                Version = "",
-                Encrypted = 1,
-                Data = new SKBuiltinString { @string = "" }.SerializeToProtoBuf(),
-                Timestamp = (uint)(DateTime.UtcNow.ToTimeStamp()),
-                Optype = 2,
-                Uin = 0
-            }.SerializeToProtoBuf();
+            var ccdata = CheckClientData.GetNewSpamData(_Environment.WeChatDataId, _Environment.WeChatOsType, _Environment.Device.Model, _Environment.Device.CpuCore,
+                _Environment.Device.IPhoneVersion, _Environment.DeviceName, _8026.PlistVersion, _Environment.WeChatOsType, _8026.PlistVersion,
+               _8026.Md5OfMachoHeader, _8026.AppUUID, _8026.InstallTimes, _Environment.DeviceImei, _Cache.DeviceToken, _8026.StrVersion,
+               _Cache.SoftConfig, _Cache.SoftData);
+            var devicetoken = CheckClientData.GetDeviceToken(_Cache.DeviceToken);
             var extspam = new WCExtInfo
             {
                 CcData = new SKBuiltinString_ { buffer = ccdata, iLen = (uint)(ccdata.Length) },
@@ -512,113 +327,7 @@ namespace WeChat.Core
             return result;
         }
 
-        /// <summary>
-        /// 自动登录/二次登录（23XML）
-        /// </summary>
-        /// <returns></returns>
-        public virtual async Task<UnifyAuthResponse> WXAutoAuth()
-        {
-            if (!TestProxy(WXCGIUrl.micromsg_bin_autoauth))
-            {
-                _Status = new WXStatus()
-                {
-                    Code = 2,
-                    Message = "登录失败[代理超时]"
-                };
-                return null;
-            }
-            _Status = default;
-            var retry = 3;
-            var result = default(UnifyAuthResponse);
-            var ecdh = new ECKeyPair(Curve.SecP224r1);
-            var ccd = new DeviceRunningInfo23
-            {
-                Version = "00000003",
-                Encrypted = 1,
-                Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataXml()),
-            }.SerializeToProtoBuf();
-
-            var pubkey = ecdh.PublicKey;
-            var pb = new AutoAuthRequest
-            {
-                rsaReqData = new AutoAuthRsaReqData()
-                {
-                    aesEncryptKey = new AesKey() { key = _Cache.SessionKey, len = (int)(_Cache.SessionKey?.Length) },
-                    cliPubEcdhKey = new Ecdh { ecdhkey = new EcdhKey { key = pubkey, len = (int)(pubkey?.Length) }, nid = 713 }
-                },
-                aesReqData = new AutoAuthAesReqData()
-                {
-                    baseRequest = new BaseRequest
-                    {
-                        clientVersion = _Environment.Terminal.GetWeChatVersion(),
-                        devicelId = _Environment.WeChatDataId.ToByteArray(16, 2),
-                        osType = _Environment.WeChatOsType,
-                        sessionKey = _Cache.SessionKey,
-                        uin = 0,
-                        scene = 1
-                    },
-                    autoAuthKey = new SKBuiltinString_() { buffer = _Cache.AutoAuthToken, iLen = (uint)(_Cache.AutoAuthToken?.Length) },
-                    BaseAuthReqInfo = new BaseAuthReqInfo(),
-                    clientSeqId = _Environment.DeviceImei + "-" + DateTime.Now.ToTimeStamp().ToString(),
-                    deviceName = _Environment.DeviceName,
-                    deviceType = _Environment.WeChatOsType,
-                    imei = _Environment.DeviceImei,
-                    timeZone = "8.00",
-                    language = "zh_CN",
-                    builtinIpseq = 0,
-                    signature = "",
-                    clientCheckData = new SKBuiltinString_ { buffer = ccd, iLen = (uint)ccd.Length }
-                }
-            };
-            var pb_acount = pb?.rsaReqData?.SerializeToProtoBuf();
-            var pb_device = pb?.aesReqData?.SerializeToProtoBuf();
-
-            var body = new byte[] { };
-            var rsa_verson = WXRSAVersion.RSA_VER_135;
-            var rsa_acount = pb_acount.ZIPCompress().RSAEncrypt(rsa_verson.GetKey().ToByteArray(16, 2), rsa_verson.GetExponent());
-            var aes_acount = pb_acount.ZIPCompress().AESEncrypt(_Cache.SessionKey);
-            var aes_device = pb_device.ZIPCompress().AESEncrypt(_Cache.SessionKey);
-            body = body.Concat(pb_acount.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(pb_device.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(rsa_acount.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(aes_acount.Length.ToByteArray(Endian.Big)).ToArray();
-            body = body.Concat(rsa_acount).ToArray();
-            body = body.Concat(aes_acount).ToArray();
-            body = body.Concat(aes_device).ToArray();
-            var package = Pack(body, (int)WXCGIUrl.micromsg_bin_autoauth, _Cache.Terminal.GetWeChatVersion().Code, false, body.Length, body.Length, 0, 9, (int)rsa_verson);
-            do
-            {
-                result = await Request<UnifyAuthResponse>(package, WXCGIUrl.micromsg_bin_autoauth);
-            } while ((result?.baseResponse?.ret == RetConst.MM_ERR_IDC_REDIRECT) && --retry > 0);
-            result?.CallWhen(result?.baseResponse?.ret == RetConst.MM_OK, _ =>
-            {
-                _Cache.EcdhKey = ecdh.GetSharedKey(result.authParam.ecdh.ecdhkey.key);
-                _Cache.SessionKey = result.authParam.session.key.AESDecrypt(_Cache.EcdhKey.MD5());
-            });
-            result?.CallWhen(true, _ =>
-            {
-                _Status = new WXStatus
-                {
-                    Code = result?.baseResponse?.ret == RetConst.MM_OK ? 1 : (int)(result?.baseResponse?.ret ?? RetConst.MM_ERR_NOT),
-                    Message = result?.baseResponse?.ret == RetConst.MM_OK ? _Profile.ToJson() : result?.baseResponse?.errMsg.@string.Between("<Content><![CDATA[", "]]></Content>"),
-                    Url = result?.baseResponse?.ret == RetConst.MM_OK ? "" : result?.baseResponse?.errMsg.@string.Between("<Url><![CDATA[", "]]></Url>"),
-                    Ticket = result?.baseResponse?.ret == RetConst.MM_OK ? "" : result?.baseResponse?.errMsg.@string.Substring("ticket=", 34),
-                    LoginChannel = _Status.LoginChannel,
-                    LoginMode = WXLoginMode.Auto
-                };
-                if (_Status.Code == -1)
-                {
-                    _Status.Message = "登录失败[未登录/已退出]";
-                }
-                if (string.IsNullOrEmpty(_Status.Message))
-                {
-                    _Status.Code = 3;
-                    _Status.Message = "登录失败[实例环境异常]";
-                }
-            });
-            return result;
-        }
-
+     
         /// <summary>
         /// 安全自动登录/二次登录（24PB）
         /// </summary>
@@ -638,24 +347,11 @@ namespace WeChat.Core
             var retry = 3;
             var result = default(UnifyAuthResponse);
             var ecdh = new ECKeyPair(Curve.SecP224r1);
-            var ccd = new DeviceRunningInfo24
-            {
-                Version = "00000003",
-                Encrypted = 1,
-                Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataPB()),
-                Timestamp = (uint)(DateTime.UtcNow.ToTimeStamp()),
-                Optype = 5,
-                Uin = 0
-            }.SerializeToProtoBuf();
-            var devicetoken = new DeviceRunningInfo24
-            {
-                Version = "",
-                Encrypted = 1,
-                Data = new SKBuiltinString { @string = "" }.SerializeToProtoBuf(),
-                Timestamp = (uint)(DateTime.UtcNow.ToTimeStamp()),
-                Optype = 2,
-                Uin = 0
-            }.SerializeToProtoBuf();
+            var ccd =  CheckClientData.GetNewSpamData(_Environment.WeChatDataId, _Environment.WeChatOsType, _Environment.Device.Model, _Environment.Device.CpuCore,
+                _Environment.Device.IPhoneVersion, _Environment.DeviceName, _8026.PlistVersion, _Environment.WeChatOsType, _8026.PlistVersion,
+               _8026.Md5OfMachoHeader, _8026.AppUUID, _8026.InstallTimes, _Environment.DeviceImei, _Cache.DeviceToken, _8026.StrVersion,
+               _Cache.SoftConfig, _Cache.SoftData);
+            var devicetoken = CheckClientData.GetDeviceToken(_Cache.DeviceToken);
             var extspam = new WCExtInfo
             {
                 CcData = new SKBuiltinString_ { buffer = ccd, iLen = (uint)ccd.Length },

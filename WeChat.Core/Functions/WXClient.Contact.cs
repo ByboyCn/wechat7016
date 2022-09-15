@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using WeChat.Core.Protocol;
 using WeChat.Core.Protocol.Protos;
 using WeChat.Core.Protocol.Protos.V2;
+using XMS.WeChat.Core.Libraries.WCAes;
+using XMS.WeChat.Core.Versions;
 
 namespace WeChat.Core
 {
@@ -150,15 +152,10 @@ namespace WeChat.Core
         /// <returns></returns>
         public virtual async Task<VerifyUserResponese> WXVerifyUser(int type, string stranger_v1, string stranger_v2, byte scene, string verify, string ticket)
         {
-            var ccd = new DeviceRunningInfo24
-            {
-                Version = "00000003",
-                Encrypted = 1,
-                Data = WCAES03.BuildClientCheckData(_Environment.BuildClientCheckDataPB()),
-                Timestamp = (uint)(DateTime.UtcNow.ToTimeStamp()),
-                Optype = 5,
-                Uin = 0
-            }.SerializeToProtoBuf();
+            var ccd = CheckClientData.GetNewSpamData(_Environment.WeChatDataId, _Environment.WeChatOsType, _Environment.Device.Model, _Environment.Device.CpuCore,
+                _Environment.Device.IPhoneVersion, _Environment.DeviceName, _8026.PlistVersion, _Environment.WeChatOsType, _8026.PlistVersion,
+               _8026.Md5OfMachoHeader, _8026.AppUUID, _8026.InstallTimes, _Environment.DeviceImei, _Cache.DeviceToken, _8026.StrVersion,
+               _Cache.SoftConfig, _Cache.SoftData);
             var extspam = new WCExtInfo
             {
                 CcData = new SKBuiltinString_ { buffer = ccd, iLen = (uint)(ccd.Length) }

@@ -2268,8 +2268,14 @@ namespace WeChat.Core.Protocol
         micromsg_bin_getchatroomannouncement = 992,
         [WXCGIUrl("/cgi-bin/micromsg-bin/newgetinvitefriend")]
         micromsg_bin_newgetinvitefriend = 135,
-        [WXCGIUrl("/cgi-bin/micromsg-bin/fpfreshnl")]
-        micromsg_bin_fpfreshnl = 3789
+        [WXCGIUrl("/cgi-bin/micromsg-bin/fpfreshnl",Encode = WXEncode.HYBRID_ECDH)]
+        micromsg_bin_fpfreshnl = 3944,
+        [WXCGIUrl("/cgi-bin/micromsg-bin/fpinitnl", Encode = WXEncode.HYBRID_ECDH)]
+        micromsg_bin_fpinitnl = 3644,
+        [WXCGIUrl("/cgi-bin/micromsg-bin/fpinit")]
+        micromsg_bin_fpinit = 3789,
+        [WXCGIUrl("/cgi-bin/micromsg-bin/fpfresh")]
+        micromsg_bin_fpfresh = 836,
     }
 
     [AttributeUsage(AttributeTargets.Field)]

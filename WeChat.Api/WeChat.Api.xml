@@ -637,18 +637,9 @@
             <param name="dto"></param>
             <returns></returns>
         </member>
-        <member name="M:WeChat.Api.Controllers.HeartbeatController.WXReportClientCheck(WeChat.Api.Models.BaseDto)">
+        <member name="M:WeChat.Api.Controllers.HeartbeatController.GetDeviceToken(WeChat.Api.Models.BaseDto)">
             <summary>
-            上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-            23XML
-            </summary>
-            <param name="dto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WeChat.Api.Controllers.HeartbeatController.WXSecReportClientCheck(WeChat.Api.Models.BaseDto)">
-            <summary>
-            安全上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-            24PB
+            获取devicetoken
             </summary>
             <param name="dto"></param>
             <returns></returns>
@@ -733,20 +724,6 @@
         <member name="M:WeChat.Api.Controllers.LoginController.WXCheckLoginVerifyCode(WeChat.Api.Models.Login.CheckVerifyCodeDto)">
             <summary>
             效验登录验证码
-            </summary>
-            <param name="dto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WeChat.Api.Controllers.LoginController.WXLoginManual(WeChat.Api.Models.Login.LoginDto)">
-            <summary>
-            人工登录（23XML）
-            </summary>
-            <param name="dto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WeChat.Api.Controllers.LoginController.WXLoginAuto(WeChat.Api.Models.BaseDto)">
-            <summary>
-            自动登录/二次登录（23XML）
             </summary>
             <param name="dto"></param>
             <returns></returns>

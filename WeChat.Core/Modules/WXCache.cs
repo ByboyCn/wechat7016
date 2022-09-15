@@ -65,5 +65,9 @@ namespace WeChat.Core
         /// 自动登陆票据
         /// </summary>
         public string AutoAuthTicket;
+
+        public string DeviceToken { get; internal set; }
+        public byte[] SoftConfig { get; internal set; }
+        public byte[] SoftData { get; internal set; }
     }
 }

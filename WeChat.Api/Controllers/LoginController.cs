@@ -111,78 +111,7 @@ namespace WeChat.Api.Controllers
             });
         }
 
-        /// <summary>
-        /// 人工登录（23XML）
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [HttpPost(nameof(WXLoginManual))]
-        public async Task<ActionResult<RestfulData<object>>> WXLoginManual([FromBody] LoginDto dto)
-        {
-            return await Business<object>(dto, async (client, result) =>
-            {
-                var auth = await client?.WXManualAuth((Core.WXLoginChannel)(dto.Channel), dto.UserName, dto.Password, dto.Slider);
-                //result.data = auth;
-                result.data = client?.Status;
-                if (client?.Status.Code == 1)
-                {
-                    if (dto.Init)
-                    {
-                        await client?.WXNewInit();
-                        result.remark = "自动初始化新设备成功";
-                    }
-                    await UpdateClient(dto.Guid, client);
-                    result.flag = 1;
-                    return;
-                }
-                else if (client?.Status.Code == 3)
-                {
-                    await ReleaseClient<object>(new BaseDto() { Guid = dto.Guid }, null);
-                    result.remark = "实例已释放";
-                    return;
-                }
-                else
-                {
-                    await UpdateClient(dto.Guid, client);
-                    result.flag = 1;
-                }
-            });
-        }
 
-        /// <summary>
-        /// 自动登录/二次登录（23XML）
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [HttpPost(nameof(WXLoginAuto))]
-        public async Task<ActionResult<RestfulData<object>>> WXLoginAuto([FromBody] BaseDto dto)
-        {
-            return await Business<object>(dto, async (client, result) =>
-            {
-                var auth = await client?.WXAutoAuth();
-                //result.data = auth;
-                result.data = client?.Status;
-                if (client?.Status.Code == 1)
-                {
-                    await client?.WXNewInit();
-                    result.remark = "自动初始化新设备成功";
-                    await UpdateClient(dto.Guid, client);
-                    result.flag = 1;
-                    return;
-                }
-                else if (client?.Status.Code == 3)
-                {
-                    await ReleaseClient<object>(new BaseDto() { Guid = dto.Guid }, null);
-                    result.remark = "实例已释放";
-                    return;
-                }
-                else
-                {
-                    await UpdateClient(dto.Guid, client);
-                    result.flag = 1;
-                }
-            });
-        }
 
         /// <summary>
         /// 人工安全登录（24PB）

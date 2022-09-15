@@ -222,30 +222,6 @@ namespace WeChat.Core
         /// <returns></returns>
         public virtual async Task<bool> InitSession()
         {
-            #region 测试mmtls初始化 2020-12-22
-            //string log = "Build:{0}/{1}ms Request:{2}/{3}ms Init:{4}/{5}ms";
-            //DateTime start, end;
-            //TimeSpan ts;
-            //start = DateTime.Now;
-            //var build = _Session.BuildRequest(out var ecdh, out var hash);
-            //end = DateTime.Now;
-            //ts = end.Subtract(start);
-            //log = log.Replace("{0}", $"{build?.Length}");
-            //log = log.Replace("{1}", $"{ts.TotalMilliseconds}");
-            //start = DateTime.Now;
-            //var request = await RequestByHttpHelper(build, $"/mmtls/{DateTime.UtcNow.ToTimeStamp()}");
-            //end = DateTime.Now;
-            //ts = end.Subtract(start);
-            //log = log.Replace("{2}", $"{request?.Length}");
-            //log = log.Replace("{3}", $"{ts.TotalMilliseconds}");
-            //start = DateTime.Now;
-            //var session = _Session.Initialize(WXSession.Parse(request).Item2, ecdh, hash);
-            //end = DateTime.Now;
-            //ts = end.Subtract(start);
-            //log = log.Replace("{4}", $"{session?.Length}");
-            //log = log.Replace("{5}", $"{ts.TotalMilliseconds}");
-            //Debug.WriteLine($"{log}");
-            #endregion
             var request = await RequestByHttpHelper(_Session.BuildRequest(_Session.PskKey,out var ecdh, out var hash), $"/mmtls/{DateTime.UtcNow.ToTimeStamp()}");
             _Session.Initialize(WXSession.Parse(request).Item2, ecdh, hash);
             return _Session.Initialized;

@@ -46,6 +46,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MG.gRPCClient\MG.gRPCClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Functions\WXClient.Mini.cs">
       <SubType>Component</SubType>
     </Compile>

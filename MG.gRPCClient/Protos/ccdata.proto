@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option csharp_namespace = "MG.gRPC";
+
+package ccd;
+
+
+service CcData {
+  rpc GetCcData(CcDataRequest) returns (CcDataResponse);
+  rpc GetZDData(CcDataRequest) returns (CcDataResponse);
+  rpc GetDTData(CcDataRequest) returns (CcDataResponse);
+  rpc GetWcste(CcDataRequest) returns (CcDataResponse);
+  rpc GetWcstf(CcDataRequest) returns (CcDataResponse);
+}
+
+
+message CcDataRequest {
+  string deviceId = 1;
+  string devOsVersion = 2;
+  string devType = 3;
+  uint32 cpuCore = 4;
+  string iphoneVer = 5;
+  string devName = 6;
+  uint32 version = 7;
+  uint32 plistVersion = 8;
+  string md5OfMachoHeader = 9;
+  string appUUId = 10;
+  uint32 installTimes = 11;
+  string imei = 12;
+  string deviceToken = 13;
+  string strVersion = 14;
+  uint32 fType = 15;
+  string fFstypename= 16;
+  uint32 fOwner=17;
+  string pathA=18;
+  string pathB=19;
+  uint64 fFfree=20;
+  string devOsType=21;
+  bytes softConfig=22;
+  bytes softData=23;
+}
+
+
+message CcDataResponse {
+	bytes result = 1;
+}

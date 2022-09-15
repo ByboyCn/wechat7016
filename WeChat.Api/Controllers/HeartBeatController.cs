@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Distributed;
 using WeChat.Api.Models;
+using WeChat.Pb.Entites;
 
 namespace WeChat.Api.Controllers
 {
@@ -61,33 +62,24 @@ namespace WeChat.Api.Controllers
         }
 
         /// <summary>
-        /// 上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 23XML
+        /// 获取devicetoken
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
-        [HttpPost(nameof(WXReportClientCheck))]
-        public async Task<ActionResult<RestfulData<object>>> WXReportClientCheck([FromBody] BaseDto dto)
+        [HttpPost(nameof(WXHeartBeat))]
+        public async Task<ActionResult<RestfulData<object>>> GetDeviceToken([FromBody] BaseDto dto)
         {
             return await Business<object>(dto, async (client, result) =>
             {
-                result.data = await client?.WXReportClientCheck();
+                var heart = default(TrustResp);
+                try
+                {
+                    heart = await client.WXGetDeviceToken();
+                }
+                catch { }
+                
             });
         }
 
-        /// <summary>
-        /// 安全上报客户端校验（扫码登陆后 1-2 分钟上报一次）
-        /// 24PB
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        [HttpPost(nameof(WXSecReportClientCheck))]
-        public async Task<ActionResult<RestfulData<object>>> WXSecReportClientCheck([FromBody] BaseDto dto)
-        {
-            return await Business<object>(dto, async (client, result) =>
-            {
-                result.data = await client?.WXSecReportClientCheck();
-            });
-        }
     }
 }

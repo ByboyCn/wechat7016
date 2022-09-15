@@ -32,6 +32,11 @@ namespace WeChat.Core
         /// 显示名称
         /// </summary>
         public string Display;
+        /// <summary>
+        /// cpu核心数
+        /// </summary>
+        public uint CpuCore;
+        public string IPhoneVersion;
         #endregion
 
         #region 构造函数
@@ -41,11 +46,12 @@ namespace WeChat.Core
         /// <param name="terminal"></param>
         public WXDevice(WXTerminal terminal)
         {
-            Manufacturer = ""; Model = ""; VersionRelease = ""; VersionIncremental = ""; Display = "";
-            if (terminal == WXTerminal.ANDROID) { Manufacturer = "vivo"; Model = "vivo R9"; VersionRelease = "6.0.2"; VersionIncremental = "eng.compiler.20170116.180408"; Display = "MMB29M release-keys"; }
-            if (terminal == WXTerminal.IPAD) { Manufacturer = "Apple"; Model = "iPad"; VersionRelease = "14.3.0"; VersionIncremental = ""; Display = ""; }
-            if (terminal == WXTerminal.IMAC) { Manufacturer = "Apple"; Model = "iMac"; VersionRelease = "10.15.7"; VersionIncremental = ""; Display = ""; }
-            if (terminal == WXTerminal.IPHONE) { Manufacturer = "Apple"; Model = "iPhone"; VersionRelease = "14.3.0"; VersionIncremental = ""; Display = ""; }
+            Manufacturer = ""; Model = ""; VersionRelease = ""; VersionIncremental = ""; Display = ""; IPhoneVersion = ""; CpuCore = 0;
+            if (terminal == WXTerminal.ANDROID) { Manufacturer = "vivo"; Model = "vivo R9"; VersionRelease = "6.0.2"; VersionIncremental = "eng.compiler.20170116.180408"; Display = "MMB29M release-keys"; IPhoneVersion = "iPad4.4"; CpuCore = 2; }
+            if (terminal == WXTerminal.IPAD) { Manufacturer = "Apple"; Model = "iPad"; VersionRelease = "14.3.0"; VersionIncremental = ""; Display = ""; IPhoneVersion = "iPad4.4"; CpuCore = 2; }
+            if (terminal == WXTerminal.IMAC) { Manufacturer = "Apple"; Model = "iMac"; VersionRelease = "10.15.7"; VersionIncremental = ""; Display = ""; IPhoneVersion = "iPad4.4"; CpuCore = 2; }
+            if (terminal == WXTerminal.IPHONE) { Manufacturer = "Apple"; Model = "iPhone"; VersionRelease = "14.3.0"; VersionIncremental = ""; Display = ""; IPhoneVersion = "iPad4.4"; CpuCore = 2; }
+            
         }
         /// <summary>
         /// 构造微信设备
@@ -60,6 +66,8 @@ namespace WeChat.Core
             node = node.SelectSingleNode("VERSION_RELEASE"); VersionRelease = node.Attributes["name"].Value;
             node = node.SelectSingleNode("VERSION_INCREMENTAL"); VersionIncremental = node.Attributes["name"].Value;
             node = node.SelectSingleNode("DISPLAY"); Display = node.Attributes["name"].Value;
+            CpuCore = 2;
+            IPhoneVersion = "iPad4.4";
         }
         /// <summary>
         /// 构造微信设备
@@ -76,7 +84,11 @@ namespace WeChat.Core
             VersionRelease = version_release;
             VersionIncremental = version_incremental;
             Display = display;
+            CpuCore = 2;
+            IPhoneVersion = "iPad4.4";
         }
+
+
         #endregion
 
         #region 接口
