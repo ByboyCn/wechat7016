@@ -4,10 +4,16 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml;
 using WeChat.Core.Protocol;
+using WeChat.Core.Protocol.Protos;
 using WeChat.Core.Protocol.Protos.V2;
+using Sodao.FastSocket.SocketBase;
+using System.Buffers;
+using System.ServiceModel.Channels;
 
 namespace WeChat.Core
 {
@@ -49,7 +55,7 @@ namespace WeChat.Core
         public WXShortLinker()
         {
             _Server.ShortServerPort = 80;
-            _Server.ShortServerAddress = GetDnsServers("sgshort.wechat.com")?.FirstOrDefault() ?? "short.weixin.qq.com";
+            _Server.ShortServerAddress = GetDnsServers("short.weixin.qq.com")?.FirstOrDefault() ?? "short.weixin.qq.com";
         }
         /// <summary>
         /// 构建短链接
@@ -60,13 +66,11 @@ namespace WeChat.Core
             _Server.ShortServerPort = 80;
             if (terminal == WXTerminal.ANDROID)
             {
-                //_Server.ShortServerAddress = GetDnsServers("szextshort.weixin.qq.com")?.FirstOrDefault() ?? "short.weixin.qq.com";
-                _Server.ShortServerAddress = "szextshort.weixin.qq.com";
+                _Server.ShortServerAddress = "extshort.weixin.qq.com";
             }
             else
             {
-                //_Server.ShortServerAddress = GetDnsServers("sgshort.wechat.com")?.FirstOrDefault() ?? "short.weixin.qq.com";
-                _Server.ShortServerAddress = "sgshort.wechat.com";
+                _Server.ShortServerAddress = "short.weixin.qq.com";
             }
         }
         /// <summary>
@@ -76,7 +80,7 @@ namespace WeChat.Core
         public WXShortLinker(string url)
         {
             _Server.ShortServerPort = 80;
-            _Server.ShortServerAddress = GetDnsServers(url)?.FirstOrDefault() ?? "sgshort.wechat.com";
+            _Server.ShortServerAddress = GetDnsServers(url)?.FirstOrDefault() ?? "short.weixin.qq.com";
         }
         /// <summary>
         /// 构建短链接
@@ -175,6 +179,7 @@ namespace WeChat.Core
             response?.Dispose();
             return result;
         }
+        HttpClient httpClient = new HttpClient();
         /// <summary>
         /// 发送请求HttpHelper
         /// </summary>
@@ -183,34 +188,34 @@ namespace WeChat.Core
         /// <returns></returns>
         protected virtual async Task<byte[]> RequestByHttpHelper(byte[] data, string route, bool proxy = false)
         {
-            Debug.WriteLine($"http://{_Server.ShortServerAddress}:{_Server.ShortServerPort}{route}");
-            HttpResult result = new HttpResult();
-            HttpHelper http = new HttpHelper();
-            HttpItem item = new HttpItem()
+            try
             {
-                URL = $"http://{_Server.ShortServerAddress}:{_Server.ShortServerPort}{route}",
-                Method = "POST",
-                Accept = "*/*",
-                ContentType = "application/octet-stream",
-                UserAgent = "MicroMessenger Client",
-                KeepAlive = false,
-                PostDataType = PostDataType.Byte,
-                ResultType = ResultType.Byte,
-                PostdataByte = data,
-                Timeout = 1000 * 200
-            };
-            item.Header.Add(HttpRequestHeader.CacheControl, "no-cache");
-            if (Session.Initialized)
-            {
-                item.Header.Add(HttpRequestHeader.Upgrade, "mmtls");
+                Debug.WriteLine($"http://{_Server.ShortServerAddress}:{_Server.ShortServerPort}{route}");
+                using var request = new ByteArrayContent(data);
+
+                //这里没有host么   UserAgent 需要校验么
+                request.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                request.Headers.Add("UserAgent", "MicroMessenger Client");
+                request.Headers.Add("CacheControl", "no-cache");
+                var message = await httpClient.PostAsync($"http://{_Server.ShortServerAddress}:{_Server.ShortServerPort}{route}", request);
+                if (message.StatusCode == HttpStatusCode.OK)
+                {
+                    var response = await message.Content.ReadAsByteArrayAsync();
+
+                    return response;
+                }
+                else
+                {
+                    Console.WriteLine("请求出错了");
+                }
             }
-            if (Proxy.Enable == true && proxy == true)
+            catch (Exception ex)
             {
-                item.ProxyIp = Proxy.ToStrProxy();
+
+                throw;
             }
-            result = http.GetHtml(item);
-            await Task.CompletedTask;
-            return result?.ResultByte ?? new byte[1] { 1 };
+           
+            return null;
         }
 
         #endregion
@@ -231,7 +236,7 @@ namespace WeChat.Core
         /// </summary>
         /// <param name="network"></param>
         /// <returns></returns>
-        public virtual async Task Redirect(NetworkSectResp network)
+        public virtual async Task Redirect(Protocol.Protos.V2.NetworkSectResp network)
         {
             var dns = network?.newHostList?.list?.First(t => t.origin == "extshort.weixin.qq.com")?.substitute;
             var ips = network?.builtinIplist?.shortConnectIplist?.Where(t => t.domain.Replace("\0", "") == dns)?.ToArray();
@@ -284,6 +289,7 @@ namespace WeChat.Core
             });
             return result;
         }
+
         #endregion
     }
 }

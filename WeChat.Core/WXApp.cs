@@ -64,7 +64,7 @@ namespace WeChat.Core
         /// <summary>
         /// 用户信息
         /// </summary>
-        protected WXProfile _Profile;
+        protected WXProfile _Profile = new WXProfile();
         /// <summary>
         /// 环境信息
         /// </summary>

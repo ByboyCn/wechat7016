@@ -68,6 +68,7 @@ namespace WeChat.Api.Controllers
                 //    throw new Exception("GetClient Cache为空");
                 //}
                 var linker = new WXShortLinker(serializetion.Server, serializetion.Session) { Proxy = serializetion.Proxy };
+                await linker.InitSession();
                 client = new WXApp(linker, serializetion.Environment, serializetion.Cache, serializetion.Profile, serializetion.Status);
             }
             catch

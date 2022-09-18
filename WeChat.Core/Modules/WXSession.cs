@@ -157,11 +157,11 @@ namespace WeChat.Core
             #region 第一步：解析KEY
 
             //var ecdh = new ECKeyPair(Curve.SecP256r1, ecdhkey, null);
-            var d = psk[0][0x3e];
+            var d = psk[0][60];
 
             var pubkey = psk[0].Skip(0x3f).Take(0x41).ToArray();
             var seckey = new byte[] { };
-            if(d == 1) {
+            if(d == 5) {
                 seckey = ecdhkey[0].GetSharedKey(pubkey,k => k.SHA256());
             } else {
                 seckey = ecdhkey[1].GetSharedKey(pubkey,k => k.SHA256());

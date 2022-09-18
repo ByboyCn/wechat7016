@@ -466,7 +466,7 @@ namespace WeChat.Core
                     clientVersion = _Environment.Terminal.GetWeChatVersion(),
                     devicelId = _Environment.WeChatDataId.ToByteArray(16, 2),
                     osType = _Environment.WeChatOsType,
-                    sessionKey = _Cache.SessionKey,
+                    sessionKey = new byte[0],
                     scene = 0,
                     uin = _Cache.Uin
                 },
@@ -544,6 +544,10 @@ namespace WeChat.Core
             {
                 var buffer = response.data.notifyData.buffer.AESDecrypt(_Cache.SessionKey);
                 result = buffer?.DeserializeFromProtoBuf<LoginQRCodeNotify>();
+            }
+            if (_Profile == null)
+            {
+                _Profile = new WXProfile();
             }
             result?.CallWhen(true, _ => _Profile.HeadImage = result.headImgUrl);
             return await Task.FromResult(result);

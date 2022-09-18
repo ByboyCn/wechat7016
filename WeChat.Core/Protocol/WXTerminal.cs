@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using XMS.WeChat.Core.Versions;
 
 namespace WeChat.Core.Protocol
 {
@@ -21,7 +22,7 @@ namespace WeChat.Core.Protocol
         /// <summary>
         /// iPad
         /// </summary>
-        [WXTerminal(WXOS.IOS, 0x0d, 0xff, 0x18000722, WXRSAVersion.RSA_VER_182)] //十六进制：1700140C，十进制：385881100，版本：7.0.20:12
+        [WXTerminal(WXOS.IOS, 0x0d, 0xff, (int)_8026.PlistVersion,0)] //十六进制：1700140C，十进制：385881100，版本：7.0.20:12
         IPAD=2,
         /// <summary>
         /// iMac
@@ -133,13 +134,7 @@ namespace WeChat.Core.Protocol
         /// <returns></returns>
         public static WXVersion GetWeChatVersion(this WXTerminal? target)
         {
-            var result = default(WXVersion);
-            var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);
-            if (attris != null && attris.Length > 0)
-            {
-                WXTerminalAttribute coAttrs = attris[0] as WXTerminalAttribute;
-                result = coAttrs.WeChatVersion;
-            }
+            WXVersion result = (int)_8026.PlistVersion;
             return result;
         }
         /// <summary>
