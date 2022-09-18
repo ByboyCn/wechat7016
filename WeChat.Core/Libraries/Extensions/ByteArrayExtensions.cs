@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -255,10 +256,11 @@ namespace System
         /// <returns></returns>
         public static T DeserializeFromBinary<T>(this byte[] data)
         {
-            T t = default; BinaryFormatter formatter = new BinaryFormatter();
+            T t = default; 
             try
             {
-                t = (T)formatter.Deserialize(new MemoryStream(data));
+                var str =Encoding.Default.GetString(data);
+                t= JsonConvert.DeserializeObject<T>(str);
             }
             catch (Exception ex)
             {

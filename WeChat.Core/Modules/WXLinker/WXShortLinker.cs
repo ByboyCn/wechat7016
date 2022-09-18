@@ -20,11 +20,11 @@ namespace WeChat.Core
         /// <summary>
         /// 微信服务器
         /// </summary>
-        protected WXServer _Server;
+        protected WXServer _Server = new WXServer();
         /// <summary>
         /// 微信会话
         /// </summary>
-        protected WXSession _Session;
+        protected WXSession _Session = new WXSession();
         #endregion
 
         #region 属性
@@ -39,7 +39,7 @@ namespace WeChat.Core
         /// <summary>
         /// 获取或设置代理
         /// </summary>
-        public WXProxy Proxy { get; set; }
+        public WXProxy Proxy { get; set; } = new WXProxy();
         #endregion
 
         #region 构造函数
@@ -55,7 +55,7 @@ namespace WeChat.Core
         /// 构建短链接
         /// </summary>
         /// <param name="terminal">微信终端</param>
-        public WXShortLinker(WXTerminal terminal)
+        public WXShortLinker(WXTerminal? terminal)
         {
             _Server.ShortServerPort = 80;
             if (terminal == WXTerminal.ANDROID)

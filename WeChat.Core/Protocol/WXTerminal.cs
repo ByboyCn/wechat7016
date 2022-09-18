@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace WeChat.Core.Protocol
 {
@@ -11,22 +12,22 @@ namespace WeChat.Core.Protocol
         /// Android
         /// </summary>
         [WXTerminal(WXOS.ANDROID, 0x02, 0xff, 0x27001439, WXRSAVersion.RSA_VER_182)] //十六进制：27001439，十进制：654316601，版本：7.0.20:57
-        ANDROID,
+        ANDROID=0,
         /// <summary>
         /// iPhone
         /// </summary>
         [WXTerminal(WXOS.IOS, 0x0d, 0xff, 0x18000722, WXRSAVersion.RSA_VER_182)] //十六进制：1700140C，十进制：385881100，版本：7.0.20:12
-        IPHONE,
+        IPHONE=1,
         /// <summary>
         /// iPad
         /// </summary>
         [WXTerminal(WXOS.IOS, 0x0d, 0xff, 0x18000722, WXRSAVersion.RSA_VER_182)] //十六进制：1700140C，十进制：385881100，版本：7.0.20:12
-        IPAD,
+        IPAD=2,
         /// <summary>
         /// iMac
         /// </summary>
         [WXTerminal(WXOS.IOS, 0x0e, 0xff, 0x13000013, WXRSAVersion.RSA_VER_182)] //十六进制：1205000B，十进制：302317579，版本：2.5.0:11
-        IMAC
+        IMAC=3
     }
     /// <summary>
     /// 微信终端特性标记
@@ -82,7 +83,7 @@ namespace WeChat.Core.Protocol
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static WXOS GetOS(this WXTerminal target)
+        public static WXOS GetOS(this WXTerminal? target)
         {
             var result = default(WXOS);
             var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);
@@ -98,7 +99,7 @@ namespace WeChat.Core.Protocol
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static byte GetTerminalFlag(this WXTerminal target)
+        public static byte GetTerminalFlag(this WXTerminal? target)
         {
             var result = default(byte);
             var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);
@@ -114,7 +115,7 @@ namespace WeChat.Core.Protocol
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static byte GetFixFlag(this WXTerminal target)
+        public static byte GetFixFlag(this WXTerminal? target)
         {
             var result = default(byte);
             var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);
@@ -130,7 +131,7 @@ namespace WeChat.Core.Protocol
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static WXVersion GetWeChatVersion(this WXTerminal target)
+        public static WXVersion GetWeChatVersion(this WXTerminal? target)
         {
             var result = default(WXVersion);
             var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);
@@ -146,7 +147,7 @@ namespace WeChat.Core.Protocol
         /// </summary>
         /// <param name="target"></param>
         /// <returns></returns>
-        public static WXRSAVersion GetRsaVersion(this WXTerminal target)
+        public static WXRSAVersion GetRsaVersion(this WXTerminal? target)
         {
             var result = default(WXRSAVersion);
             var attris = target.GetType().GetField(target.ToString()).GetCustomAttributes(typeof(WXTerminalAttribute), true);

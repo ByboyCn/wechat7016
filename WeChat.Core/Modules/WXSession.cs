@@ -6,7 +6,7 @@ using System.Linq;
 namespace WeChat.Core
 {
     [Serializable]
-    public struct WXSession
+    public class WXSession
     {
         #region 属性
         public long ServerSequence { get; private set; }

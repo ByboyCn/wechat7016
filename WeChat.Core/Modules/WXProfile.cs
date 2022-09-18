@@ -6,7 +6,7 @@ namespace WeChat.Core
     /// 微信个人信息
     /// </summary>
     [Serializable]
-    public struct WXProfile
+    public class WXProfile
     {
         /// <summary>
         /// 微信ID/用户名

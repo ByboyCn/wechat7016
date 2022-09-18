@@ -42,7 +42,7 @@ namespace WeChat.Core
     /// 微信状态
     /// </summary>
     [Serializable]
-    public struct WXStatus
+    public class WXStatus
     {
         #region 属性
         /// <summary>

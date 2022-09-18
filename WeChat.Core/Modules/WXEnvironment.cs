@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Text;
 using System.Xml;
 using WeChat.Core.Protocol;
@@ -9,7 +10,7 @@ namespace WeChat.Core
     /// 微信设备
     /// </summary>
     [Serializable]
-    public struct WXDevice
+    public class WXDevice
     {
         #region 属性
         /// <summary>
@@ -40,6 +41,10 @@ namespace WeChat.Core
         #endregion
 
         #region 构造函数
+        public WXDevice()
+        {
+
+        }
         /// <summary>
         /// 构造微信设备
         /// </summary>
@@ -120,72 +125,79 @@ namespace WeChat.Core
     /// 微信环境
     /// </summary>
     [Serializable]
-    public struct WXEnvironment
+    public class WXEnvironment
     {
+
         #region 属性
         /// <summary>
         /// 终端
         /// </summary>
-        public WXTerminal Terminal { get; }
+        [JsonIgnore]
+        public WXTerminal? Terminal { get; set; }
+        public int? Terminal1 { get { return (int)Terminal; }  set { Terminal = (WXTerminal)value; } }
         /// <summary>
         /// 硬件信息
         /// </summary>
-        public WXDevice Device { get; }
+        public WXDevice Device { get; set; }
         /// <summary>
         /// 设备IMEI
         /// </summary>
-        public string DeviceImei { get; }
+        public string DeviceImei { get; set; }
         /// <summary>
         /// 设备MAC地址
         /// </summary>
-        public string DeviceMac { get; }
+        public string DeviceMac { get; set; }
         /// <summary>
         /// 设备名称
         /// </summary>
-        public string DeviceName { get; }
+        public string DeviceName { get; set;  }
         /// <summary>
         /// 设备品牌
         /// </summary>
-        public string DeviceBrand { get; }
+        public string DeviceBrand { get; set; }
         /// <summary>
         /// 微信数据（62/A16）
         /// </summary>
-        public string WeChatData { get; }
+        public string WeChatData { get; set; }
         /// <summary>
         /// 签名
         /// </summary>
-        public string WeChatSignature { get; }
+        public string WeChatSignature { get; set; }
         /// <summary>
         /// 软件XML信息
         /// </summary>
-        public string WeChatXmlInfo { get; }
+        public string WeChatXmlInfo { get; set; }
         /// <summary>
         /// 设备Id数据
         /// </summary>
-        public string WeChatDataId { get; }
+        public string WeChatDataId { get; set; }
         /// <summary>
         /// 系统类型
         /// </summary>
-        public string WeChatOsType { get; }
+        public string WeChatOsType { get; set; }
         /// <summary>
         /// 浏览器UA
         /// </summary>
-        public string WeChatUserAgent { get; }
+        public string WeChatUserAgent { get; set; }
         /// <summary>
         /// 应用包Id
         /// </summary>
-        public string WeChatBundleId { get; }
+        public string WeChatBundleId { get; set; }
         /// <summary>
         /// 微信UUID
         /// </summary>
-        public string WeChatVendorId { get; }
+        public string WeChatVendorId { get; set; }
         /// <summary>
         /// 广告UUID
         /// </summary>
-        public string WeChatAdvertId { get; }
+        public string WeChatAdvertId { get; set; }
         #endregion
 
         #region 接口
+        public WXEnvironment()
+        {
+
+        }
         /// <summary>
         /// 创建环境信息
         /// </summary>
@@ -317,7 +329,7 @@ namespace WeChat.Core
         /// <param name="signature">签名</param>
         /// <param name="mac">mac地址</param>
         /// <returns></returns>
-        public static string CreateSoftXmlInfo(WXTerminal terminal, WXDevice device, string vendorid, string imei, string signature, string mac)
+        public static string CreateSoftXmlInfo(WXTerminal? terminal, WXDevice device, string vendorid, string imei, string signature, string mac)
         {
             var rd = new Random();
             StringBuilder builder = new StringBuilder();
@@ -374,7 +386,7 @@ namespace WeChat.Core
         /// <param name="terminal">终端类型</param>
         /// <param name="device">设备信息</param>
         /// <returns></returns>
-        public static string CreateBrand(WXTerminal terminal, WXDevice device)
+        public static string CreateBrand(WXTerminal? terminal, WXDevice device)
         {
             var result = "";
             switch (terminal)
@@ -392,14 +404,9 @@ namespace WeChat.Core
         /// </summary>
         /// <param name="terminal"></param>
         /// <returns></returns>
-        public static string CreateWxData(WXTerminal terminal)
+        public static string CreateWxData(WXTerminal? terminal)
         {
-            #region 可能影响效率 修改于2020-12-22
-            //return terminal == WXTerminal.ANDROID
-            //    ? $"{terminal.GetOS().GetWXDataPrefix()}{Guid.NewGuid().ToString().Replace("-", "").Substring(0, 15)}"
-            //    : $"{terminal.GetOS().GetWXDataPrefix()}{Guid.NewGuid().ToString().Replace("-", "").ToBytes().ToString(16, 2)}{terminal.GetOS().GetWXDataSuffix()}";
-            #endregion
-
+         
             return terminal == WXTerminal.ANDROID
                ? $"A{Guid.NewGuid().ToString().Replace("-", "").Substring(0, 15)}"
                : $"62706c6973743030d4010203040506090a582476657273696f6e58246f626a65637473592461726368697665725424746f7012000186a0a2070855246e756c6c5f1020{Guid.NewGuid().ToString().Replace("-", "").ToBytes().ToString(16, 2)}5f100f4e534b657965644172636869766572d10b0c54726f6f74800108111a232d32373a406375787d0000000000000101000000000000000d0000000000000000000000000000007f";
@@ -410,7 +417,7 @@ namespace WeChat.Core
         /// </summary>
         /// <param name="terminal"></param>
         /// <returns></returns>
-        public static string CreateSignature(WXTerminal terminal)
+        public static string CreateSignature(WXTerminal? terminal)
         {
             return terminal == WXTerminal.ANDROID ? "18c867f0717aa67b2ab7347505ba07ed" : "";
         }
@@ -421,14 +428,8 @@ namespace WeChat.Core
         /// <param name="terminal">终端类型</param>
         /// <param name="wxdat">微信数据</param>
         /// <returns></returns>
-        public static string ConvertWxDataToImei(WXTerminal terminal, string wxdata)
+        public static string ConvertWxDataToImei(WXTerminal? terminal, string wxdata)
         {
-            #region 可能影响效率 修改于2020-12-22
-            //var result = "";
-            //if (terminal != WXTerminal.ANDROID) { result = Encoding.UTF8.GetString(wxdata.Substring(terminal.GetOS().GetWXDataPrefix().Length, 64).ToByteArray(16, 2)); }
-            //if (terminal == WXTerminal.ANDROID) { result = wxdata.Substring(1).ToBytes().ToString(16, 2); }
-            //return result;
-            #endregion
 
             #region 
             var result = "";
@@ -451,7 +452,7 @@ namespace WeChat.Core
         /// <param name="terminal">终端类型</param>
         /// <param name="wxdat">微信数据</param>
         /// <returns></returns>
-        public static string ConvertWxDataToDeviceId(WXTerminal terminal, string wxdata)
+        public static string ConvertWxDataToDeviceId(WXTerminal? terminal, string wxdata)
         {
             var result = "";
             if (terminal != WXTerminal.ANDROID && wxdata.StartsWith(terminal.GetOS().GetWXDataPrefix(), StringComparison.OrdinalIgnoreCase))
@@ -474,7 +475,7 @@ namespace WeChat.Core
         /// <param name="terminal">终端类型</param>
         /// <param name="wxdat">微信数据</param>
         /// <returns></returns>
-        public static string ConvertImeiToDeviceId(WXTerminal terminal, string imei)
+        public static string ConvertImeiToDeviceId(WXTerminal? terminal, string imei)
         {
             var result = "";
             if (terminal != WXTerminal.ANDROID)

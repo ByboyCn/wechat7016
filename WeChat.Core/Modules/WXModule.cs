@@ -11,7 +11,7 @@ namespace WeChat.Core
     /// 微信代理
     /// </summary>
     [Serializable]
-    public struct WXProxy
+    public class WXProxy
     {
         #region 属性
         /// <summary>
@@ -66,7 +66,7 @@ namespace WeChat.Core
     /// 微信服务器
     /// </summary>
     [Serializable]
-    public struct WXServer
+    public class WXServer
     {
         /// <summary>
         /// 长链服务器地址

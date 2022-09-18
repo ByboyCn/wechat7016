@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 
 namespace System
 {
@@ -44,12 +45,14 @@ namespace System
         {
             try
             {
-                using (MemoryStream memoryStream = new MemoryStream())
-                {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(memoryStream, data);
-                    return memoryStream.ToArray();
-                }
+                //using (MemoryStream memoryStream = new MemoryStream())
+                //{
+                //    BinaryFormatter formatter = new BinaryFormatter();
+                //    formatter.Serialize(memoryStream, data);
+                //    return memoryStream.ToArray();
+                //}
+                var d =JsonConvert.SerializeObject(data);
+                return Encoding.Default.GetBytes(d);
             }
             catch (Exception ex)
             {

@@ -7,12 +7,12 @@ namespace WeChat.Core
     /// 微信缓存
     /// </summary>
     [Serializable]
-    public struct WXCache
+    public class WXCache
     {
         /// <summary>
         /// 终端
         /// </summary>
-        public WXTerminal Terminal;
+        public WXTerminal? Terminal;
         /// <summary>
         /// 上报CCD上下文值
         /// </summary>

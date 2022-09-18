@@ -63,7 +63,7 @@ namespace WeChat.Core
         /// </summary>
         /// <param name="terminal">终端</param>
         /// <param name="linker">连接器</param>
-        public WXCore(WXTerminal terminal, IWXLinker linker)
+        public WXCore(WXTerminal? terminal, IWXLinker linker)
         {
             var brid = new HyBridEcdh();
             _Linker = linker;
